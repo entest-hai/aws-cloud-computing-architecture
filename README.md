@@ -1,5 +1,6 @@
 ## 03 DEC 2021 Multi-Region NextJS Deployment using Route 53 and EC2  
 ### 1. Architecture 
+Noted: [http://test.entest.io](http://test.entest.io) the demo does not supported yet **https**
 ![Picture1](https://user-images.githubusercontent.com/20411077/144642634-ce323da2-8064-44ce-8c57-35389b1feb73.png)
 ### 2. Use cases 
 - Fail-over handle 
@@ -26,3 +27,6 @@ India
 ![biorithm_india_route_53](https://user-images.githubusercontent.com/20411077/144639121-0c32d07b-0f79-4fcd-8d6e-90c0a30f0da2.png)
 Vietnam
 ![biorithm_vietnam_route_53](https://user-images.githubusercontent.com/20411077/144639135-ba4c299c-e1ae-4f71-b2bb-950aecfe00b2.png)
+### 6. Result
+- Users in Singapore will see 
+- Users in USA, India, Vietnam will see 

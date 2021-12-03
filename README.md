@@ -1,6 +1,12 @@
-## 03 DEC 2021 Multi-Region NextJS Deployment using Route 53 and EC2  
+## 2021 Multi-Region NextJS Deployment using Route 53 and EC2
+**03 DEC 2021 TRAN MINH HAI**  
+### Abstract 
+When users click in this web [biorithm](http://test.entest.io) they will be routed based on their ip **geolocation**
+- Users in Signapore are routed to aws ap-southest-1 Asia Pacific Singapore
+- Users in USA, India, Vietnam are routed to aws us-east-1 US Eeast N.Virginia 
+- Noted: support **http** only [http://test.entest.io](http://test.entest.io). No **https** for this demo. 
+- Based on your location, you will see different things as the end of this note
 ### 1. Architecture 
-Noted: [http://test.entest.io](http://test.entest.io) the demo does not supported yet **https**
 ![Picture1](https://user-images.githubusercontent.com/20411077/144642634-ce323da2-8064-44ce-8c57-35389b1feb73.png)
 ### 2. Use cases 
 - Fail-over handle 

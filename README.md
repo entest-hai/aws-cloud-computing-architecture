@@ -17,3 +17,11 @@
 - Users in USA, Vietnam, India will be routed to the **aws us-east-1** US-East(N.Virignia)
 - Users in Sigapore, Asia will be routed to **aws ap-southeast-1** Asia Pacific (Singapore)
 ### 5. Configure 
+Singapore 
+![biorithm_singapore_route_53](https://user-images.githubusercontent.com/20411077/144639096-a9df76b3-d990-4709-9c2c-c536bf69d984.png)
+USA
+![biorithm_usa_route_53](https://user-images.githubusercontent.com/20411077/144639108-683fc242-567a-4a55-84ab-a010722ae5a0.png)
+India
+![biorithm_india_route_53](https://user-images.githubusercontent.com/20411077/144639121-0c32d07b-0f79-4fcd-8d6e-90c0a30f0da2.png)
+Vietnam
+![biorithm_vietnam_route_53](https://user-images.githubusercontent.com/20411077/144639135-ba4c299c-e1ae-4f71-b2bb-950aecfe00b2.png)

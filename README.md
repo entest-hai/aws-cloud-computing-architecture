@@ -1,5 +1,6 @@
 ## 03 DEC 2021 Multi-Region NextJS Deployment using Route 53 and EC2  
 ### 1. Architecture 
+![Picture1](https://user-images.githubusercontent.com/20411077/144642634-ce323da2-8064-44ce-8c57-35389b1feb73.png)
 ### 2. Use cases 
 - Fail-over handle 
 - Better user experience per region 

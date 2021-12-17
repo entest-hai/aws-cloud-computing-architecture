@@ -11,7 +11,6 @@ verify
 ```
 aws s3 ls 
 ```
-
 ### Copy web files to S3 
 ```
 aws s3 cp . s3://bucket-name/ --recursive
@@ -20,10 +19,10 @@ verify
 ```
 aws s3 ls s3://bucket-name/ --recursive 
 ```
-
+### 403 error 
+![403_error](https://user-images.githubusercontent.com/20411077/146595648-28cbccce-e2aa-4733-a0a0-56f80dfdacab.png)
 ### Configure host a static website 
-
-
+![enable_static_web_hosting_index](https://user-images.githubusercontent.com/20411077/146595602-22db6843-6282-45ba-814a-bca5040ef716.png)
 ### Configure bucket policy 
 ```
 {

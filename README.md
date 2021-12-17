@@ -25,6 +25,9 @@ By default, Amazon S3 blocks public access to your account and buckets. If you w
 ### Configure host a static website 
 ![enable_static_web_hosting_index](https://user-images.githubusercontent.com/20411077/146595602-22db6843-6282-45ba-814a-bca5040ef716.png)
 ### Configure bucket policy 
+After you edit S3 Block Public Access settings, you can add a bucket policy to grant public read access to your bucket. When you grant public read access, anyone on the internet can access your bucket.
+
+
 ```
 {
   "Id": "",

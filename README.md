@@ -20,7 +20,8 @@ verify
 aws s3 ls s3://bucket-name/ --recursive 
 ```
 ### 403 error 
-![403_error](https://user-images.githubusercontent.com/20411077/146595648-28cbccce-e2aa-4733-a0a0-56f80dfdacab.png)
+By default, Amazon S3 blocks public access to your account and buckets. If you want to use a bucket to host a static website, you can use these steps to edit your block public access settings.
+
 ### Configure host a static website 
 ![enable_static_web_hosting_index](https://user-images.githubusercontent.com/20411077/146595602-22db6843-6282-45ba-814a-bca5040ef716.png)
 ### Configure bucket policy 

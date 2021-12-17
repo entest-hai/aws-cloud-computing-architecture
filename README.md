@@ -27,7 +27,6 @@ By default, Amazon S3 blocks public access to your account and buckets. If you w
 ### Configure bucket policy 
 After you edit S3 Block Public Access settings, you can add a bucket policy to grant public read access to your bucket. When you grant public read access, anyone on the internet can access your bucket.
 
-
 ```
 {
   "Id": "",
@@ -44,4 +43,27 @@ After you edit S3 Block Public Access settings, you can add a bucket policy to g
     }
   ]
 }
+```
+
+### Block public bucket access 
+Check **public access block** of an account  
+```
+aws s3control get-public-access-block --account id "your account id"
+```
+Check **public access block** of a bucket 
+```
+aws s3api get-public-access-block --bucket haitran-swinburne-2021
+```
+Result 
+```
+  "PublicAccessBlockConfiguration": {
+        "BlockPublicAcls": true,
+        "IgnorePublicAcls": true,
+        "BlockPublicPolicy": false,
+        "RestrictPublicBuckets": false
+    }
+```
+Update 
+```
+aws s3control put-public-access-block --public-access-block-configuration BlockPublicPolicy=true --account-id "your account id"
 ```

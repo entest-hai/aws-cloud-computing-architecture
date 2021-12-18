@@ -7,7 +7,8 @@ When users click in this web [entest](http://test.entest.io) they will be routed
 - Noted: support **http** only [http://test.entest.io](http://test.entest.io). No **https** for this demo. 
 - Based on your location, you will see different things as the end of this note
 ### 1. Architecture 
-![Picture1](https://user-images.githubusercontent.com/20411077/144642634-ce323da2-8064-44ce-8c57-35389b1feb73.png)
+![Picture1](https://user-images.githubusercontent.com/20411077/146625408-25a7f49f-66f7-4bde-bbf3-d38d2ed59843.png)
+
 ### 2. Use cases 
 - Disaster recovery RPO & RTO
 - Fail-over handle 

@@ -1,7 +1,7 @@
 ## Multi-Region NextJS Deployment using Route 53 and EC2
 **04 DEC 2021 TRAN MINH HAI**  
 ### Abstract 
-When users click in this web [biorithm](http://test.entest.io) they will be routed based on their ip **geolocation**
+When users click in this web [entest](http://test.entest.io) they will be routed based on their ip **geolocation**
 - Users in Signapore are routed to aws ap-southest-1 Asia Pacific Singapore
 - Users in USA, India, Vietnam are routed to aws us-east-1 US East N.Virginia 
 - Noted: support **http** only [http://test.entest.io](http://test.entest.io). No **https** for this demo. 

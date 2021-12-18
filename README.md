@@ -36,7 +36,8 @@ Vietnam
 ![biorithm_vietnam_route_53](https://user-images.githubusercontent.com/20411077/144639135-ba4c299c-e1ae-4f71-b2bb-950aecfe00b2.png)
 ### 6. Result
 - **Users in USA, India, Vietnam will see**
-![usa](https://user-images.githubusercontent.com/20411077/146625043-e4de7341-cf86-4398-a009-69c6e303b8a2.png)
+![usa](https://user-images.githubusercontent.com/20411077/146625281-8a8d9979-509b-4e25-b767-d08b32bf858b.png)
+
 
 - **Users in Singapore will see** 
 

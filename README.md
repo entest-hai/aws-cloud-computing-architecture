@@ -40,4 +40,5 @@ Vietnam
 
 - **Users in Singapore will see** 
 
-![sg](https://user-images.githubusercontent.com/20411077/146625155-463180d3-6e43-4e53-bc64-c08aee8a79ee.png)
+![singapore](https://user-images.githubusercontent.com/20411077/146625247-79f2c79c-3c3b-4d9c-86af-09a10d7d5e9d.png)
+

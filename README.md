@@ -67,3 +67,12 @@ Update
 ```
 aws s3control put-public-access-block --public-access-block-configuration BlockPublicPolicy=true --account-id "your account id"
 ```
+
+## TODO: Note on S3 
+### S3 cost and best practice 
+### Configure CORS 
+Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. You can build rich client-side web application with Amazon S3 and selective allow cross-origin access to your Amazon S3 resources. [AWS CORS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManageCorsUsing.html)
+### Setup S3 VPC endpoint 
+### Setup policies for S3 bucket 
+### Setup IAM role to access S3 bucket 
+### Setup S3 encryption and KMS key 

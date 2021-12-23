@@ -5,6 +5,8 @@
 Create an REST API with API Gateway which trigger a Lambda function to read a object from S3. In addition, 
 the Lambda can load large library dependencies from a EFS endpoint. 
 
+#### Architecture 
+![aws-s3-vpc-endpoint](https://user-images.githubusercontent.com/20411077/147256007-ac158516-dc0e-4899-9552-ee2030aa1efb.png)
 #### Step 1. Create a simple hello world function python handler 
 ```
 def lambda_handler(event, context):

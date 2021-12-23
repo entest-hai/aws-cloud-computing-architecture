@@ -63,9 +63,69 @@ def lambda_handler(event, context):
 ```
 
 #### Step 5. Create a EFS endpoint 
+- create a EFS file system 
+[Reference](https://aws.amazon.com/blogs/compute/using-amazon-efs-for-aws-lambda-in-your-serverless-applications/)
+- create an access point 
+[Reference](https://aws.amazon.com/blogs/compute/using-amazon-efs-for-aws-lambda-in-your-serverless-applications/)
+- CloudFormation template 
+```
+  AccessPointResource:
+    Type: 'AWS::EFS::AccessPoint'
+    Properties:
+      FileSystemId: !Ref FileSystemResource
+      PosixUser:
+        Uid: "1000"
+        Gid: "1000"
+      RootDirectory:
+        CreationInfo:
+          OwnerGid: "1000"
+          OwnerUid: "1000"
+          Permissions: "0777"
+        Path: "/efs"
+```
+#### Step 6. Mount EFS access point to EC2 
+- Install efs-utils for ubuntun [git repo](https://github.com/aws/efs-utils)
+- mount the access point on an EC2 [mount](https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html)
+- [mount access point command](https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html)
+- ensure that EC2 and EFS is in the default security group 
+```
+mount -t efs -o tls,accesspoint=fsap-12345678 fs-12345678: /localmountpoint
+```
+#### Step 7. Add polcies for Lambda 
+- add VPC endpoint S3 because now this is the only way for Lambda to access S3
+- policy to add the VPC 
+- policy to read and write the EFS 
+- policy to read the S3 bucket (just double check) 
+- test 
+```
+import json
+import boto3
 
-#### Step 6. Configure Lambda load dependencies from EFS 
+def lambda_handler(event, context):
+    # test read write EFS
+    with open("/mnt/efs/data.txt", "w") as file: 
+        file.write("Hello from Lambda")
+    # test lamba access s3 
+    s3Client = boto3.client("s3")
+    items = s3Client.list_objects(
+        Bucket='haitran-swinburne-2021'
+    )
+    # parse parameters 
+    filename = event["queryStringParameters"]["filename"]
+    # response 
+    return {
+        'statusCode': 200,
+        'headers': {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Methods": "OPTIONS,GET"
+        },
+         'body': json.dumps({'filename': filename, 'item': items},  indent=4, sort_keys=True, default=str)
+    }
 
-#### Step 7. Lambda write to EFS 
+```
 
-#### Step 8. Test from web application 
+#### Step 8. Configure Lambda load dependencies from EFS 
+- [recommendation and performance from AWS](https://docs.aws.amazon.com/lambda/latest/dg/services-efs.html)
+
+#### Step 10. Test from web application 

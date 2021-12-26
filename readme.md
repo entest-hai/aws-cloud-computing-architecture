@@ -6,6 +6,9 @@ Just take note three options to do Authentication with AWS Amplify/Cognito.
 1. [**Ampliy Auth**](https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/) I first built a website using ReactJS and Amplify. Amplify provides nice Auth API, and [custom UI](https://aws.amazon.com/blogs/mobile/amplify-uis-new-authenticator-component-makes-it-easy-to-add-customizable-login-pages-to-your-react-angular-or-vue-app/) and [other Ampliy UI components](https://ui.docs.amplify.aws/). Many auth providers integrated. 
 2. [**NextAuth**](https://next-auth.js.org/) I move to NextJS and [**Ampliy SSR hosting**](https://aws.amazon.com/blogs/mobile/host-a-next-js-ssr-app-with-real-time-data-on-aws-amplify/) hosting for quick serving static contents.
 3. [**Cognito Federated**](https://docs.amplify.aws/lib/auth/advanced/q/platform/js/) have to use a bit low level setup with Cognito because I was not able to setup Ampliy SSR Authentication.
+
+![auth](https://user-images.githubusercontent.com/20411077/147409072-b961c2fd-4c33-400c-b4f0-adac707366df.png)
+
 ## Option 1. Amplify Auth 
 Setup with Amplify CLI, just go through default setup and push. The many Auth features are provided via this [**AuthClass**](https://aws-amplify.github.io/amplify-js/api/classes/authclass.html) 
 ```

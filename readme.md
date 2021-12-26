@@ -1,139 +1,157 @@
-# API Gateway - Lambda - EFS - S3 
-**23 DEC 2021 Hai Tran**
+# AWS NextJS (SSR) Authentication 
+**25 DEC 2021 Hai Tran**
 
-#### Discussion
-I want to create a API endpoint to process data uploaded from users and stored in a S3 bucket. Here is something I did but not sure is this a good practice or not. So I would like to listen to comments. 
-- Lambda depdenccies is several GB so not able to zip and deploy, so I load dependencies from EFS [reference](https://aws.amazon.com/blogs/compute/building-deep-learning-inference-with-aws-lambda-and-amazon-efs/)
-- Since the Lambda is inside a VPC, it is not able to access S3. So I add a VPC S3 endpoint. 
-
-#### Architecture
-I took Lambda over EC2 and ECS because the processing tasks requires 10GB RAM, 20 seconds, need to scale out, and the load is not always on. Also Lambda has no IP and port, process data without traverse the internet, easy to operate, and monitor. It can scale out by using a pool of multiple such as 10 Lambdas and keep warm, I don't like provisioned because the load/spike is unpredictable. However, this wwill needs some code to route/schedule requests (like a simple roud robin) to Lambdas. Is a simple round robin good and robust enough? 
-
-![aws-s3-vpc-endpoint (1)](https://user-images.githubusercontent.com/20411077/147257529-8cc770e5-27b0-452d-8ea4-22d70b6b75b9.png)
-
-#### Step 1. Create a python handler just to check 
+## Discussion
+Just take note three options to do Authentication with AWS Amplify/Cognito. 
+1. [**Ampliy Auth**](https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/) I first built a website using ReactJS and Amplify. Amplify provides nice Auth API, and [custom UI](https://aws.amazon.com/blogs/mobile/amplify-uis-new-authenticator-component-makes-it-easy-to-add-customizable-login-pages-to-your-react-angular-or-vue-app/) and [other Ampliy UI components](https://ui.docs.amplify.aws/). Many auth providers integrated. 
+2. [**NextAuth**](https://next-auth.js.org/) I move to NextJS and [**Ampliy SSR hosting**](https://aws.amazon.com/blogs/mobile/host-a-next-js-ssr-app-with-real-time-data-on-aws-amplify/) hosting for quick serving static contents.
+3. [**Cognito Federated**](https://docs.amplify.aws/lib/auth/advanced/q/platform/js/) have to use a bit low level setup with Cognito because I was not able to setup Ampliy SSR Authentication.
+## Option 1. Amplify Auth 
+Setup with Amplify CLI, just go through default setup and push. The many Auth features are provided via this [**AuthClass**](https://aws-amplify.github.io/amplify-js/api/classes/authclass.html) 
 ```
-def lambda_handler(event, context):
-    # parse parameters 
-    params = event["queryStringParameters"]["filename"]
-    # 
-    return {
-        'statusCode': 200,
-        'body': json.dumps({'filename': params})
-    }
+Just copy from [here](https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/#option-1-use-pre-built-ui-components) to feel how to use it. 
 ```
+Basic
+```
+import { Amplify } from 'aws-amplify';
 
-#### Step 2. Check CORS for Lambda and curl 
-Need to add HEADER to the lambda handler 
-```
-def lambda_handler(event, context):
-    # parse parameters 
-    filename = event["queryStringParameters"]["filename"]
-    # client s3 client to read an object from s3 
-    s3Client = boto3.client("s3")
-    items = s3Client.list_objects(
-        Bucket='bucketname'
-    )
-    # response 
-    return {
-        'statusCode': 200,
-        'headers': {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Allow-Methods": "OPTIONS,GET"
-        },
-        'body': json.dumps({'filename': filename, 'item': items},  indent=4, sort_keys=True, default=str)    
-    }
-```
-#### Step 3. Configure Lambda access a S3 bucket 
-- Need a VPC endpoint. 
-- IAM role for the Lambda function to access S3 [reference](https://aws.amazon.com/premiumsupport/knowledge-center/lambda-execution-role-s3-bucket/)
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
+
+function App({ signOut, user }) {
+  return (
+    <>
+      <h1>Hello {user.username}</h1>
+      <button onClick={signOut}>Sign out</button>
+    </>
+  );
+}
+
+export default withAuthenticator(App);
 ```
 
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "ExampleStmt",
-      "Action": [
-        "s3:GetObject"
-      ],
-      "Effect": "Allow",
-      "Resource": [
-        "arn:aws:s3:::AWSDOC-EXAMPLE-BUCKET/*"
-      ]
-    }
-  ]
+## Option 2. Next Auth
+Create and setup the [...nextauth].ts file 
+```
+/pages/api/auth/[...nextauth].ts 
+```
+```
+import NextAuth from 'next-auth'; 
+import GoogleProvider from 'next-auth/providers/google'; 
+import GitHubProvider from 'next-auth/providers/github';
+import { NextApiRequest, NextApiResponse } from 'next'; 
+
+const options = {
+  providers: [
+    GitHubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID, 
+      clientSecret: process.env.GITHUB_CLIENT_SECRET
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID, 
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+    })
+  ] 
+}
+
+export default async function auth(req: NextApiRequest, res: NextApiResponse) {
+  return await NextAuth(req, res, options)
 }
 ```
-#### Step 4. Create a EFS endpoint 
-- create a EFS file system 
-[Reference](https://aws.amazon.com/blogs/compute/using-amazon-efs-for-aws-lambda-in-your-serverless-applications/)
-- create an access point 
-[Reference](https://aws.amazon.com/blogs/compute/using-amazon-efs-for-aws-lambda-in-your-serverless-applications/)
-- CloudFormation template 
+Then use it via SessionProvider, here is __app.js
 ```
-  AccessPointResource:
-    Type: 'AWS::EFS::AccessPoint'
-    Properties:
-      FileSystemId: !Ref FileSystemResource
-      PosixUser:
-        Uid: "1000"
-        Gid: "1000"
-      RootDirectory:
-        CreationInfo:
-          OwnerGid: "1000"
-          OwnerUid: "1000"
-          Permissions: "0777"
-        Path: "/efs"
-```
-#### Step 5. Mount EFS access point to EC2 
-- Install efs-utils for ubuntun [git repo](https://github.com/aws/efs-utils)
-- mount the access point on an EC2 [mount](https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html)
-- [mount access point command](https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html)
-- ensure that EC2 and EFS is in the default security group 
-```
-mount -t efs -o tls,accesspoint=fsap-12345678 fs-12345678: /localmountpoint
-```
-#### Step 6. Add polcies for Lambda 
-- add VPC endpoint S3 because now this is the only way for Lambda to access S3
-- policy to add the VPC 
-- policy to read and write the EFS 
-- policy to read the S3 bucket (just double check) 
-- test 
-```
-import json
-import boto3
+import { SessionProvider } from "next-auth/react"
 
-def lambda_handler(event, context):
-    # test read write EFS
-    with open("/mnt/efs/data.txt", "w") as file: 
-        file.write("Hello from Lambda")
-    # test lamba access s3 
-    s3Client = boto3.client("s3")
-    items = s3Client.list_objects(
-        Bucket='haitran-swinburne-2021'
+function Website({ Component, pageProps }) {
+
+  return (
+    <SessionProvider session={pageProps.session}>
+      <Component {...pageProps}/>
+    </SessionProvider>
+  )
+}
+
+```
+And useSession in components such as index.js. When you click Sign In, you will be redirected to 
+the provider auth flow such as Google, Github login form. After enter your accounts, a call back url 
+will bring you back to your web. 
+```
+import { useSession, signIn, signOut } from "next-auth/react"
+
+export default function Component() {
+  const { data: session } = useSession()
+  if (session) {
+    return (
+      <>
+        Signed in as {session.user.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
     )
-    # parse parameters 
-    filename = event["queryStringParameters"]["filename"]
-    # response 
-    return {
-        'statusCode': 200,
-        'headers': {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Allow-Methods": "OPTIONS,GET"
-        },
-         'body': json.dumps({'filename': filename, 'item': items},  indent=4, sort_keys=True, default=str)
-    }
+  }
+  return (
+    <>
+      Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button>
+    </>
+  )
+}
+```
+Need to configure **.env.local**
+```
+COGNITO_CLIENT_ID=
+COGNITO_CLIENT_SECRET=
+COGNITO_ISSUER=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+NEXTAUTH_URL=https://example.com
 
 ```
+Need to configure at the auth provider side for example Google.  
+Authorized JavaScript origins
 
-#### Step 7. Configure Lambda load dependencies from EFS 
-- [recommendation and performance from AWS](https://docs.aws.amazon.com/lambda/latest/dg/services-efs.html)
+```
+URIs: https://example.com 
 
-#### Reference 
-1. [Choosing Your VPC Endpoint Strategy for Amazon S3](https://aws.amazon.com/blogs/architecture/choosing-your-vpc-endpoint-strategy-for-amazon-s3/)
-2. [Lambda EFS Deep Learning](https://aws.amazon.com/blogs/compute/building-deep-learning-inference-with-aws-lambda-and-amazon-efs/)
-3. [AWS S3 access with VPC endpoints](https://aws.amazon.com/blogs/storage/managing-amazon-s3-access-with-vpc-endpoints-and-s3-access-points/)
-4. [aws s3 vpc endpoint](https://www.youtube.com/watch?v=uvKWJ4c1EYc&t=549s)
-5. [three ways to use AWS services from](https://www.alexdebrie.com/posts/aws-lambda-vpc/)
+```
+Authorized redirect URIs for local test 
+```
+http://localhost:3000/api/auth/callback/google
+```
+Authorized redirect URIs for deployment 
+```
+https://{cognito-domain}/oauth2/idpresponse
+```
+
+## Option 3. Cognito Federated 
+amplify cli to configure with social auth provider 
+```
+amplify add auth 
+```
+Then choose configuration with social auth provider 
+```
+redirectSignIn: http://localhost:3000/
+redirectSignOut: http://localhost:3000/signout/ 
+clientID: GOOGLE_CLIENT_ID
+secretID: GOOGLE_SECRET_ID
+```
+For deployment 
+```
+redirectSignIn: http://{amplify-domain}/
+redirectSignOut: http://{amplify-domain}/signout/ 
+clientID: GOOGLE_CLIENT_ID
+secretID: GOOGLE_SECRET_ID
+```
+Need to configure call back URL at the provider side such as Google 
+Authorized redirect URIs for local test 
+```
+http://localhost:3000/api/auth/callback/google
+```
+Authorized redirect URIs for deployment 
+```
+https://{cognito-domain}/oauth2/idpresponse
+```

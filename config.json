@@ -1,4 +1,0 @@
-{
-  "apiEndpoint": "https://4pyfrp6erd.execute-api.ap-southeast-1.amazonaws.com/default/testLambdaReadS3Bucket",
-  "tagKey": "swin-aws-lambda-s3-23122021"
-}

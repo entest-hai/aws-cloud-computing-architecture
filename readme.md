@@ -132,7 +132,7 @@ amplify cli to configure with social auth provider
 ```
 amplify add auth 
 ```
-Then choose configuration with social auth provider 
+Amplify CLI will ask you to enter those. AWS cognito console and your code aws-export.js should be exactly same, including the trailing slash.
 ```
 redirectSignIn: http://localhost:3000/
 redirectSignOut: http://localhost:3000/signout/ 
@@ -155,3 +155,5 @@ Authorized redirect URIs for deployment
 ```
 https://{cognito-domain}/oauth2/idpresponse
 ```
+**Note**
+Option 1 and 3 works well both local and deploy. Option 2 with the web hosted by  AWS Amplify SSR will trouble you. Hope AWS Amplify will support authentication for SSR soon. 

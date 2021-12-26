@@ -11,10 +11,7 @@ Just take note three options to do Authentication with AWS Amplify/Cognito.
 
 ## Option 1. Amplify Auth 
 Setup with Amplify CLI, just go through default setup and push. The many Auth features are provided via this [**AuthClass**](https://aws-amplify.github.io/amplify-js/api/classes/authclass.html) 
-```
-Just copy from [here](https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/#option-1-use-pre-built-ui-components) to feel how to use it. 
-```
-Basic
+Thes most basic example is [here](https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/#option-1-use-pre-built-ui-components) 
 ```
 import { Amplify } from 'aws-amplify';
 

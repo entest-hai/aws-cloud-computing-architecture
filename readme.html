@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>readme.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="aws-nextjs-ssr-authentication">AWS NextJS (SSR) Authentication</h1>
+<p><strong>25 DEC 2021 Hai Tran</strong></p>
+<h2 id="discussion">Discussion</h2>
+<p>Just take note three options to do Authentication with AWS Amplify/Cognito.</p>
+<ol>
+<li><a href="https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/"><strong>Ampliy Auth</strong></a> I first built a website using ReactJS and Amplify. Amplify provides nice Auth API, and <a href="https://aws.amazon.com/blogs/mobile/amplify-uis-new-authenticator-component-makes-it-easy-to-add-customizable-login-pages-to-your-react-angular-or-vue-app/">custom UI</a> and <a href="https://ui.docs.amplify.aws/">other Ampliy UI components</a>. Many auth providers integrated.</li>
+<li><a href="https://next-auth.js.org/"><strong>NextAuth</strong></a> I move to NextJS and <a href="https://aws.amazon.com/blogs/mobile/host-a-next-js-ssr-app-with-real-time-data-on-aws-amplify/"><strong>Ampliy SSR hosting</strong></a> hosting for quick serving static contents.</li>
+<li><a href="https://docs.amplify.aws/lib/auth/advanced/q/platform/js/"><strong>Cognito Federated</strong></a> have to use a bit low level setup with Cognito because I was not able to setup Ampliy SSR Authentication.</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/20411077/147409072-b961c2fd-4c33-400c-b4f0-adac707366df.png" alt="auth"></p>
+<h2 id="option-1-amplify-auth">Option 1. Amplify Auth</h2>
+<p>Setup with Amplify CLI, just go through default setup and push. The many Auth features are provided via this <a href="https://aws-amplify.github.io/amplify-js/api/classes/authclass.html"><strong>AuthClass</strong></a>
+Thes most basic example is <a href="https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/#option-1-use-pre-built-ui-components">here</a></p>
+<pre class="hljs"><code><div>import { Amplify } from 'aws-amplify';
+
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
+
+function App({ signOut, user }) {
+  return (
+    &lt;&gt;
+      &lt;h1&gt;Hello {user.username}&lt;/h1&gt;
+      &lt;button onClick={signOut}&gt;Sign out&lt;/button&gt;
+    &lt;/&gt;
+  );
+}
+
+export default withAuthenticator(App);
+</div></code></pre>
+<h2 id="option-2-next-auth">Option 2. Next Auth</h2>
+<p>Create and setup the [...nextauth].ts file</p>
+<pre class="hljs"><code><div>/pages/api/auth/[...nextauth].ts 
+</div></code></pre>
+<pre class="hljs"><code><div>import NextAuth from 'next-auth'; 
+import GoogleProvider from 'next-auth/providers/google'; 
+import GitHubProvider from 'next-auth/providers/github';
+import { NextApiRequest, NextApiResponse } from 'next'; 
+
+const options = {
+  providers: [
+    GitHubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID, 
+      clientSecret: process.env.GITHUB_CLIENT_SECRET
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID, 
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+    })
+  ] 
+}
+
+export default async function auth(req: NextApiRequest, res: NextApiResponse) {
+  return await NextAuth(req, res, options)
+}
+</div></code></pre>
+<p>Then use it via SessionProvider, here is __app.js</p>
+<pre class="hljs"><code><div>import { SessionProvider } from &quot;next-auth/react&quot;
+
+function Website({ Component, pageProps }) {
+
+  return (
+    &lt;SessionProvider session={pageProps.session}&gt;
+      &lt;Component {...pageProps}/&gt;
+    &lt;/SessionProvider&gt;
+  )
+}
+
+</div></code></pre>
+<p>And useSession in components such as index.js. When you click Sign In, you will be redirected to
+the provider auth flow such as Google, Github login form. After enter your accounts, a call back url
+will bring you back to your web.</p>
+<pre class="hljs"><code><div>import { useSession, signIn, signOut } from &quot;next-auth/react&quot;
+
+export default function Component() {
+  const { data: session } = useSession()
+  if (session) {
+    return (
+      &lt;&gt;
+        Signed in as {session.user.email} &lt;br /&gt;
+        &lt;button onClick={() =&gt; signOut()}&gt;Sign out&lt;/button&gt;
+      &lt;/&gt;
+    )
+  }
+  return (
+    &lt;&gt;
+      Not signed in &lt;br /&gt;
+      &lt;button onClick={() =&gt; signIn()}&gt;Sign in&lt;/button&gt;
+    &lt;/&gt;
+  )
+}
+</div></code></pre>
+<p>Need to configure <strong>.env.local</strong></p>
+<pre class="hljs"><code><div>COGNITO_CLIENT_ID=
+COGNITO_CLIENT_SECRET=
+COGNITO_ISSUER=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+NEXTAUTH_URL=https://example.com
+
+</div></code></pre>
+<p>Need to configure at the auth provider side for example Google.<br>
+Authorized JavaScript origins</p>
+<pre class="hljs"><code><div>URIs: https://example.com 
+
+</div></code></pre>
+<p>Authorized redirect URIs for local test</p>
+<pre class="hljs"><code><div>http://localhost:3000/api/auth/callback/google
+</div></code></pre>
+<p>Authorized redirect URIs for deployment</p>
+<pre class="hljs"><code><div>https://{cognito-domain}/oauth2/idpresponse
+</div></code></pre>
+<h2 id="option-3-cognito-federated">Option 3. Cognito Federated</h2>
+<p>amplify cli to configure with social auth provider</p>
+<pre class="hljs"><code><div>amplify add auth 
+</div></code></pre>
+<p>Amplify CLI will ask you to enter those. AWS cognito console and your code aws-export.js should be exactly same, including the trailing slash.</p>
+<pre class="hljs"><code><div>redirectSignIn: http://localhost:3000/
+redirectSignOut: http://localhost:3000/signout/ 
+clientID: GOOGLE_CLIENT_ID
+secretID: GOOGLE_SECRET_ID
+</div></code></pre>
+<p>For deployment</p>
+<pre class="hljs"><code><div>redirectSignIn: http://{amplify-domain}/
+redirectSignOut: http://{amplify-domain}/signout/ 
+clientID: GOOGLE_CLIENT_ID
+secretID: GOOGLE_SECRET_ID
+</div></code></pre>
+<p>Need to configure call back URL at the provider side such as Google
+Authorized redirect URIs for local test</p>
+<pre class="hljs"><code><div>http://localhost:3000/api/auth/callback/google
+</div></code></pre>
+<p>Authorized redirect URIs for deployment</p>
+<pre class="hljs"><code><div>https://{cognito-domain}/oauth2/idpresponse
+</div></code></pre>
+<p><strong>Note</strong>
+Option 1 and 3 works well both local and deploy. Option 2 with the web hosted by  AWS Amplify SSR will trouble you. Hope AWS Amplify will support authentication for SSR soon.</p>
+
+</body>
+</html>

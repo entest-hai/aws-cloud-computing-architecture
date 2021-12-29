@@ -7,7 +7,8 @@ When users click in this web [entest](http://test.entest.io) they will be routed
 - Noted: support **http** only [http://test.entest.io](http://test.entest.io). No **https** for this demo. 
 - Based on your location, you will see different things as the end of this note
 ### 1. Architecture 
-![Picture1](https://user-images.githubusercontent.com/20411077/144642634-ce323da2-8064-44ce-8c57-35389b1feb73.png)
+![Picture1](https://user-images.githubusercontent.com/20411077/146625408-25a7f49f-66f7-4bde-bbf3-d38d2ed59843.png)
+
 ### 2. Use cases 
 - Disaster recovery RPO & RTO
 - Fail-over handle 
@@ -35,7 +36,11 @@ India
 Vietnam
 ![biorithm_vietnam_route_53](https://user-images.githubusercontent.com/20411077/144639135-ba4c299c-e1ae-4f71-b2bb-950aecfe00b2.png)
 ### 6. Result
+- **Users in USA, India, Vietnam will see**
+![usa](https://user-images.githubusercontent.com/20411077/146625281-8a8d9979-509b-4e25-b767-d08b32bf858b.png)
+
+
 - **Users in Singapore will see** 
-![users_singapore](https://user-images.githubusercontent.com/20411077/144644064-dbb0f5c7-f3c0-43ee-b98d-5ad9efe1bd44.PNG)
-- **Users in USA, India, Vietnam will see** 
-![user_usa_vietnam_india](https://user-images.githubusercontent.com/20411077/144644414-7dbcadc1-9414-4f5a-9b1c-75cbf17aabf4.png)
+
+![singapore](https://user-images.githubusercontent.com/20411077/146625247-79f2c79c-3c3b-4d9c-86af-09a10d7d5e9d.png)
+

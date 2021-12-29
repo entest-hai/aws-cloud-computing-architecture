@@ -42,8 +42,8 @@ Cognito auth window launched from hosted UI
 Seperate backend and frontend in AWS Amplify Console  <br/>
 Configure redirect url in aws-config.json
 ```
-"redirectSignIn": "https://cognito-hosted-ui.d1kr0cdjwf92am.amplifyapp.com/",
-"redirectSignOut": "https://cognito-hosted-ui.d1kr0cdjwf92am.amplifyapp.com/signout/",
+"redirectSignIn": "https://{projectname}.{project-id}.amplifyapp.com/",
+"redirectSignOut": "https://{projectname}.{project-id}}amplifyapp.com/signout/",
 ``` 
 Configure redirect uri in AWS Cognito console 
 

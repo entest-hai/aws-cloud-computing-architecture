@@ -1,5 +1,6 @@
 # Setup Cognito Hosted UI and Google Auth Provider 
 **Hai Tran 29 DEC 2021**
+This note goes through how to setup authentication using cognito hosted ui with Google Authe Provider. Step 1. create clientID and clientSecret from Google Credential. Step 2. Setp cognito domain, redirectSignIn and redirectSignOut in the AWS Cognito Console or via Amplify CLI. Step 3. Configure the aws-export.json with the same redirectSignIn and redirectSignOut in the step 3. 
 
 ### Cognito hosted ui and fedreated auth with Google Auth Provider 
 Setup google credential 
@@ -37,16 +38,6 @@ Cognito auth window launched from hosted UI
 <Button
 
 ```
-Configure redirect url in aws-config.json
-```
-"redirectSignIn": "https://localhost:3000/",
-"redirectSignOut": "https://localhost:3000/signout/",
-``` 
-Configure redirect uri in AWS Cognito console 
-
-### Deploy 
-Setup cognito client app 
-![147643160-5cea6893-d123-4ce0-9537-0f87c064bb48](https://user-images.githubusercontent.com/20411077/147668588-d69e84c8-43fb-4e46-864a-b21b5bead5fb.png)
 
 Configure redirect url in aws-config.json
 ```

@@ -1,5 +1,5 @@
-# 01 JAN 2021 TRAN MINH HAI 
-# CDK to create a s3 bucket the most basic example 
+# Creat a S3 Bucket using CDK 
+**01 JAN 2021 TRAN MINH HAI**
 ### Step 1. install cdk cli and python lib
 Before this, need to configure aws cli with IAM
 ```

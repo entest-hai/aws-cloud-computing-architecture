@@ -51,6 +51,6 @@ aws s3 ls
 ```
 and should see 
 ```
-cdks3stack-haitrantestcdks3bucket606e0bb0-1jzfg4uw6ica7
+cdks3stack-MyFirstBucket606e0bb0-1jzfg4uw6ica7
 ```
 

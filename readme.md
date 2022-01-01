@@ -1,26 +1,56 @@
-## Application Load Balancer EC3 Port Fordward 
-**28 DEC 2021 TRAN MINH HAI**  
-### Discussion 
-Before routing users to different servers using route 53, I need to deploy a web with Application Load Balancer. This take note two things 1) run a web on port 80 by port forwarding 2) configure Application Load Balancer. 
-
-### 1. Setup nodejs for aarch64
-aarch64 needs to download node for  ARMv8 from [](https://nodejs.org/en/download/)
-
-### 2. Run a web on port 80 by port forwarding 
-forward to port 80 
+# 01 JAN 2021 TRAN MINH HAI 
+# CDK to create a s3 bucket the most basic example 
+### Step 1. install cdk cli and python lib
+Before this, need to configure aws cli with IAM
 ```
-sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
-sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 3000
-```
-configure security grouop 
-```
-inbound port: 80, 3000 
-from: all ip 
+aws configure 
+~/.aws/credentials
 ```
 ```
-outbound: all port 
-destination: all ip 
+npm install -g aws-cdk
+```
+check 
+```
+cdk --version 
+```
+cdk python 
+```
+python -m pip install aws-cdk-lib
+import aws_cdk as cdk
 ```
 
-### 3. Setup application load balancer 
+### Step 2. init cdk app in an empty directory 
+```
+cdk init app --language python 
+```
+activate venv which auto generated 
+```
+source .venv/bin/activate
+```
+pip install dependencies 
+```
+python -m pip install -r requirements.txt 
+```
+
+### Step 3. Specify env including region and s3 bucket name 
+edit app.py 
+```
+env=cdk.Environment(account='123456789012', region='ap-southeast-1'),
+```
+edit cdk_s3/cdk_s3_stack.py
+```
+bucket = s3.Bucket(self, "MyFirstBucket", versioned=False)
+```
+Deploy 
+```
+cdk deploy 
+```
+### Step 4. Check result 
+```
+aws s3 ls 
+```
+and should see 
+```
+cdks3stack-haitrantestcdks3bucket606e0bb0-1jzfg4uw6ica7
+```
 

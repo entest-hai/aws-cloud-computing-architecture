@@ -1,26 +1,5 @@
-# AWS CloudFormation Getting Started 
-**02 JAN 2022 TRAN MINH HAI**
-#### 1. Basic aws cloudformation cli c
-list stack and check 
-```
-aws cloudformation list-stacks
-```
-#### 2. Setup aws cloudformation linter for vim 
-```
-: CocInstall coc-cfn-lint 
-```
-#### 3. Note 
-```
-DeletionPolicy: [Retain, Delete, Snapshot]
-```
-Delete means the bucket will be deleted after stack deleted </br>
-Retain means the bucket left there after the stack deleted </br>
-```
-Outputs
-```
-
-#### 4. Create a template for hosting a static web with a S3 bucket 
-```
+# 02 JAN 2022 TRAN MINH HAI
+# first template to create a S3 bucket
 AWSTemplateFormatVersion: "2010-09-09"
 Description: Create a S3 bucket
 Resources:
@@ -63,14 +42,3 @@ Outputs:
           - TestCreateS3BucketWithCloudFormation
           - DomainName
     Description: Name of S3 bucket to hold website content
-
-```
-Create stack 
-```
-aws cloudformation create-stack --stack-name myFirstStackToCreateS3Bucket --template-body file://createS3BucketTemplate.yaml 
-```
-
-#### Delete stack 
-```
-aws cloudformation delete-stack --stack-name myFirstStackToCreateS3Bucket
-```

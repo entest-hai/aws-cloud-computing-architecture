@@ -53,4 +53,15 @@ and should see
 ```
 cdks3stack-MyFirstBucket606e0bb0-1jzfg4uw6ica7
 ```
-
+### Step 5. Update policy for the bucket 
+So later on cdk.deploy can delete this bucket 
+```
+bucket = s3.Bucket(self, "MyFirstBucket",
+    versioned=True,
+    removal_policy=cdk.RemovalPolicy.DESTROY,
+    auto_delete_objects=True)
+```
+Check changes 
+```
+cdk diff 
+```

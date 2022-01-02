@@ -1,0 +1,960 @@
+{
+    "StackSummaries": [
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/CdkS3Stack/eaef0bf0-6b16-11ec-97fb-02e1d0132054",
+            "StackName": "CdkS3Stack",
+            "CreationTime": "2022-01-01T15:24:31.883000+00:00",
+            "LastUpdatedTime": "2022-01-01T15:24:37.691000+00:00",
+            "DeletionTime": "2022-01-01T15:26:54.201000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/CdkS3Stack/d1d9df30-6b13-11ec-a814-063a302980e2",
+            "StackName": "CdkS3Stack",
+            "CreationTime": "2022-01-01T15:02:21.319000+00:00",
+            "LastUpdatedTime": "2022-01-01T15:02:27.121000+00:00",
+            "DeletionTime": "2022-01-01T15:17:09.102000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/CDKToolkit/3bf75110-6b12-11ec-bcf5-06c3d0b5aaf6",
+            "StackName": "CDKToolkit",
+            "TemplateDescription": "This stack includes resources needed to deploy AWS CDK apps into this environment",
+            "CreationTime": "2022-01-01T14:51:00.225000+00:00",
+            "LastUpdatedTime": "2022-01-01T14:51:06.062000+00:00",
+            "StackStatus": "CREATE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-CustomResourcesjson-869XN68SOKPN/6326d3a0-6928-11ec-b8cf-0a7843fff1a2",
+            "StackName": "amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-CustomResourcesjson-869XN68SOKPN",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-12-30T04:24:33.436000+00:00",
+            "StackStatus": "CREATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86/e6be3970-6927-11ec-a911-0222c52c3aae",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535/256ffce0-6927-11ec-bc13-0ad1d3e8857e",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-ConnectionStack-7F8IZUKMB0QV/543fd300-6928-11ec-a2af-0285929e157c",
+            "StackName": "amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-ConnectionStack-7F8IZUKMB0QV",
+            "CreationTime": "2021-12-30T04:24:07.583000+00:00",
+            "LastUpdatedTime": "2021-12-30T07:03:57.791000+00:00",
+            "StackStatus": "UPDATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86/e6be3970-6927-11ec-a911-0222c52c3aae",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535/256ffce0-6927-11ec-bc13-0ad1d3e8857e",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-Note-1FO8HQBH39GDZ/240098f0-6928-11ec-bcdd-06cd3bfa7422",
+            "StackName": "amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-Note-1FO8HQBH39GDZ",
+            "CreationTime": "2021-12-30T04:22:46.721000+00:00",
+            "LastUpdatedTime": "2021-12-30T07:03:20.572000+00:00",
+            "StackStatus": "UPDATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86/e6be3970-6927-11ec-a911-0222c52c3aae",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535/256ffce0-6927-11ec-bc13-0ad1d3e8857e",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-Question-44GRBTEMZ2N9/23bd0040-6928-11ec-bec4-0631b82df78c",
+            "StackName": "amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-Question-44GRBTEMZ2N9",
+            "CreationTime": "2021-12-30T04:22:46.214000+00:00",
+            "LastUpdatedTime": "2021-12-30T07:03:20.402000+00:00",
+            "StackStatus": "UPDATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86/e6be3970-6927-11ec-a911-0222c52c3aae",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535/256ffce0-6927-11ec-bc13-0ad1d3e8857e",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-Author-IKA5S2W9TJR1/23ac3760-6928-11ec-b03b-02939548843e",
+            "StackName": "amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-Author-IKA5S2W9TJR1",
+            "CreationTime": "2021-12-30T04:22:46.122000+00:00",
+            "LastUpdatedTime": "2021-12-30T07:03:20.960000+00:00",
+            "StackStatus": "UPDATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86/e6be3970-6927-11ec-a911-0222c52c3aae",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535/256ffce0-6927-11ec-bc13-0ad1d3e8857e",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-Page-18UR64ARGWGU1/23a92a20-6928-11ec-b578-026ca6728f9a",
+            "StackName": "amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86-Page-18UR64ARGWGU1",
+            "CreationTime": "2021-12-30T04:22:46.111000+00:00",
+            "LastUpdatedTime": "2021-12-30T07:03:21.823000+00:00",
+            "StackStatus": "UPDATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86/e6be3970-6927-11ec-a911-0222c52c3aae",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535/256ffce0-6927-11ec-bc13-0ad1d3e8857e",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-authentestbackend4dfc53d7-ECNSLK2WZ29M/e7a19490-6927-11ec-b856-06b9677c5942",
+            "StackName": "amplify-entestbackend-dev-111535-authentestbackend4dfc53d7-ECNSLK2WZ29M",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.5\",\"stackType\":\"auth-Cognito\",\"metadata\":{}}",
+            "CreationTime": "2021-12-30T04:21:06.258000+00:00",
+            "LastUpdatedTime": "2021-12-30T07:01:40.081000+00:00",
+            "StackStatus": "UPDATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535/256ffce0-6927-11ec-bc13-0ad1d3e8857e",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535/256ffce0-6927-11ec-bc13-0ad1d3e8857e",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86/e6be3970-6927-11ec-a911-0222c52c3aae",
+            "StackName": "amplify-entestbackend-dev-111535-apientestbackend-18LJAVKCTJP86",
+            "CreationTime": "2021-12-30T04:21:04.843000+00:00",
+            "LastUpdatedTime": "2021-12-30T07:01:39.174000+00:00",
+            "StackStatus": "UPDATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535/256ffce0-6927-11ec-bc13-0ad1d3e8857e",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535/256ffce0-6927-11ec-bc13-0ad1d3e8857e",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestbackend-dev-111535/256ffce0-6927-11ec-bc13-0ad1d3e8857e",
+            "StackName": "amplify-entestbackend-dev-111535",
+            "TemplateDescription": "Root Stack for AWS Amplify CLI",
+            "CreationTime": "2021-12-30T04:15:39.487000+00:00",
+            "LastUpdatedTime": "2021-12-30T07:01:33.949000+00:00",
+            "StackStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-124718-authentestadmin228d2023-84I63EAYNE9U/711c0190-6925-11ec-abee-0ae234cd9c5c",
+            "StackName": "amplify-entestadmin-dev-124718-authentestadmin228d2023-84I63EAYNE9U",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.5\",\"stackType\":\"auth-Cognito\",\"metadata\":{}}",
+            "CreationTime": "2021-12-30T04:03:27.571000+00:00",
+            "DeletionTime": "2021-12-30T04:09:54.355000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70-CustomResourcesjson-GNT3I6DV71S4/7e04be40-6611-11ec-9364-0a7f67ed4dd2",
+            "StackName": "amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70-CustomResourcesjson-GNT3I6DV71S4",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-12-26T06:03:06.608000+00:00",
+            "DeletionTime": "2021-12-30T04:12:12.599000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70-ConnectionStack-1V9309AZM1BRF/6f00bfc0-6611-11ec-8ec3-0661a3acd146",
+            "StackName": "amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70-ConnectionStack-1V9309AZM1BRF",
+            "CreationTime": "2021-12-26T06:02:40.571000+00:00",
+            "DeletionTime": "2021-12-30T04:12:24.314000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70-Page-1BGVSNGL8KZ47/3eec3f30-6611-11ec-9d0f-0a380c678944",
+            "StackName": "amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70-Page-1BGVSNGL8KZ47",
+            "CreationTime": "2021-12-26T06:01:19.937000+00:00",
+            "DeletionTime": "2021-12-30T04:12:24.541000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70-Author-J5JW3MGLFE3X/3edf46e0-6611-11ec-b23a-025f1e4a8bf4",
+            "StackName": "amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70-Author-J5JW3MGLFE3X",
+            "CreationTime": "2021-12-26T06:01:19.892000+00:00",
+            "DeletionTime": "2021-12-30T04:12:24.509000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70-Question-1H3L8ES0H3L5N/3ecc5b20-6611-11ec-a5f1-026960f49b34",
+            "StackName": "amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70-Question-1H3L8ES0H3L5N",
+            "CreationTime": "2021-12-26T06:01:19.735000+00:00",
+            "DeletionTime": "2021-12-30T04:12:36.302000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70/244101c0-6611-11ec-a5f1-026960f49b34",
+            "StackName": "amplify-entestadmin-dev-124718-apientestadmin-1QRLJDMOM8H70",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.5\",\"stackType\":\"api-AppSync\",\"metadata\":{}}",
+            "CreationTime": "2021-12-26T06:00:36.057000+00:00",
+            "LastUpdatedTime": "2021-12-30T04:03:28.051000+00:00",
+            "DeletionTime": "2021-12-30T04:12:08.826000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-124718-authentestadmin4c003339-MS831A4HKZ61/bfe6f690-660f-11ec-aa67-0ab7d100cff2",
+            "StackName": "amplify-entestadmin-dev-124718-authentestadmin4c003339-MS831A4HKZ61",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.5\",\"stackType\":\"auth-Cognito\",\"metadata\":{}}",
+            "CreationTime": "2021-12-26T05:50:38.198000+00:00",
+            "LastUpdatedTime": "2021-12-30T03:48:20.238000+00:00",
+            "DeletionTime": "2021-12-30T04:12:22.598000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-124718/4c3a1420-660f-11ec-bec4-0631b82df78c",
+            "StackName": "amplify-entestadmin-dev-124718",
+            "TemplateDescription": "Root Stack for AWS Amplify CLI",
+            "CreationTime": "2021-12-26T05:47:23.157000+00:00",
+            "LastUpdatedTime": "2021-12-30T04:03:21.576000+00:00",
+            "DeletionTime": "2021-12-30T04:12:05.627000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-93634-authentestadmin00c7a510-1AGG7PKLCIIT1/07a4d880-660b-11ec-a911-0222c52c3aae",
+            "StackName": "amplify-entestadmin-dev-93634-authentestadmin00c7a510-1AGG7PKLCIIT1",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.5\",\"stackType\":\"auth-Cognito\",\"metadata\":{}}",
+            "CreationTime": "2021-12-26T05:16:51.090000+00:00",
+            "DeletionTime": "2021-12-26T05:44:06.380000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET-CustomResourcesjson-85Y7SNS5C0M9/b344b070-65fc-11ec-8648-020ab983d230",
+            "StackName": "amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET-CustomResourcesjson-85Y7SNS5C0M9",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-12-26T03:34:16.522000+00:00",
+            "DeletionTime": "2021-12-26T05:43:55.273000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET-ConnectionStack-X7C0MW69BL4B/a4799c40-65fc-11ec-a1b3-0a283dfae4e4",
+            "StackName": "amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET-ConnectionStack-X7C0MW69BL4B",
+            "CreationTime": "2021-12-26T03:33:50.894000+00:00",
+            "DeletionTime": "2021-12-26T05:44:07.323000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET-Page-1VSBA29Z6BG4M/7478cac0-65fc-11ec-9aeb-0a9ca5b0d46a",
+            "StackName": "amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET-Page-1VSBA29Z6BG4M",
+            "CreationTime": "2021-12-26T03:32:30.320000+00:00",
+            "DeletionTime": "2021-12-26T05:44:07.141000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET-Question-1PD2TWXGCMH9Q/744ab5e0-65fc-11ec-b578-026ca6728f9a",
+            "StackName": "amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET-Question-1PD2TWXGCMH9Q",
+            "CreationTime": "2021-12-26T03:32:30.089000+00:00",
+            "DeletionTime": "2021-12-26T05:44:19.902000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET-Author-1XHGEBAO0R9AP/74455eb0-65fc-11ec-8738-06c0fb36dcd6",
+            "StackName": "amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET-Author-1XHGEBAO0R9AP",
+            "CreationTime": "2021-12-26T03:32:30.031000+00:00",
+            "DeletionTime": "2021-12-26T05:44:07.467000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-93634-authentestadminf160a5bd-686E4U5HEXFN/3a7fa2d0-65fc-11ec-9d0f-0a380c678944",
+            "StackName": "amplify-entestadmin-dev-93634-authentestadminf160a5bd-686E4U5HEXFN",
+            "TemplateDescription": "Amplify Cognito Stack for AWS Amplify CLI",
+            "CreationTime": "2021-12-26T03:30:53.975000+00:00",
+            "LastUpdatedTime": "2021-12-26T04:36:24.265000+00:00",
+            "DeletionTime": "2021-12-26T05:04:12.664000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET/3a664e70-65fc-11ec-9ed8-0a3dca9a3ea2",
+            "StackName": "amplify-entestadmin-dev-93634-apientestadmin-15VDU8TA10NET",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.5\",\"stackType\":\"api-AppSync\",\"metadata\":{}}",
+            "CreationTime": "2021-12-26T03:30:53.752000+00:00",
+            "LastUpdatedTime": "2021-12-26T05:16:48.951000+00:00",
+            "DeletionTime": "2021-12-26T05:43:51.942000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestadmin-dev-93634/a6b295f0-65f4-11ec-8648-020ab983d230",
+            "StackName": "amplify-entestadmin-dev-93634",
+            "TemplateDescription": "Root Stack for AWS Amplify CLI",
+            "CreationTime": "2021-12-26T02:36:38.550000+00:00",
+            "LastUpdatedTime": "2021-12-26T05:16:43.680000+00:00",
+            "DeletionTime": "2021-12-26T05:43:48.430000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-72459-authawsamplifynextjsdemo7d808aa6-1D73C6UBDDTJA/77c1d2b0-65e5-11ec-97fb-02e1d0132054",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-72459-authawsamplifynextjsdemo7d808aa6-1D73C6UBDDTJA",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.3\",\"stackType\":\"auth-Cognito\",\"metadata\":{}}",
+            "CreationTime": "2021-12-26T00:47:58.312000+00:00",
+            "StackStatus": "CREATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-72459/45201ef0-65e2-11ec-bde9-0af04bc60ae2",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-72459/45201ef0-65e2-11ec-bde9-0af04bc60ae2",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-72459/45201ef0-65e2-11ec-bde9-0af04bc60ae2",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-72459",
+            "TemplateDescription": "Root Stack for AWS Amplify CLI",
+            "CreationTime": "2021-12-26T00:25:03.916000+00:00",
+            "LastUpdatedTime": "2021-12-26T00:47:51.482000+00:00",
+            "StackStatus": "UPDATE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K-CustomResourcesjson-BBLKN5SXT9IY/115ee260-64d7-11ec-9676-023564a4b4e4",
+            "StackName": "amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K-CustomResourcesjson-BBLKN5SXT9IY",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-12-24T16:32:22.390000+00:00",
+            "StackStatus": "CREATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K/975769b0-64d6-11ec-8567-06b583952c7c",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103/7dc44870-64d5-11ec-a158-02f1730b1a9a",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K-ConnectionStack-1NMIM9K496G3P/028f1340-64d7-11ec-ac28-066b818b2066",
+            "StackName": "amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K-ConnectionStack-1NMIM9K496G3P",
+            "CreationTime": "2021-12-24T16:31:56.660000+00:00",
+            "StackStatus": "CREATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K/975769b0-64d6-11ec-8567-06b583952c7c",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103/7dc44870-64d5-11ec-a158-02f1730b1a9a",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K-Question-3993ZKSDAE3C/d21fef90-64d6-11ec-996b-02666b4f429e",
+            "StackName": "amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K-Question-3993ZKSDAE3C",
+            "CreationTime": "2021-12-24T16:30:35.476000+00:00",
+            "StackStatus": "CREATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K/975769b0-64d6-11ec-8567-06b583952c7c",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103/7dc44870-64d5-11ec-a158-02f1730b1a9a",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K-Page-1FIT7QPLBKSV/d1e29870-64d6-11ec-87fb-0ae22a57acdc",
+            "StackName": "amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K-Page-1FIT7QPLBKSV",
+            "CreationTime": "2021-12-24T16:30:35.002000+00:00",
+            "StackStatus": "CREATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K/975769b0-64d6-11ec-8567-06b583952c7c",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103/7dc44870-64d5-11ec-a158-02f1730b1a9a",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K-Author-HOPMV28THVFS/d1ca5580-64d6-11ec-9326-06461cbe625e",
+            "StackName": "amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K-Author-HOPMV28THVFS",
+            "CreationTime": "2021-12-24T16:30:34.871000+00:00",
+            "StackStatus": "CREATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K/975769b0-64d6-11ec-8567-06b583952c7c",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103/7dc44870-64d5-11ec-a158-02f1730b1a9a",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-authentest3f6f51a9-TULXGEUUD3EB/a4817810-64d6-11ec-a780-0223f5134c30",
+            "StackName": "amplify-amplify4628d24d5e144-staging-162103-authentest3f6f51a9-TULXGEUUD3EB",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.3\",\"stackType\":\"auth-Cognito\",\"metadata\":{}}",
+            "CreationTime": "2021-12-24T16:29:19.823000+00:00",
+            "StackStatus": "CREATE_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103/7dc44870-64d5-11ec-a158-02f1730b1a9a",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103/7dc44870-64d5-11ec-a158-02f1730b1a9a",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K/975769b0-64d6-11ec-8567-06b583952c7c",
+            "StackName": "amplify-amplify4628d24d5e144-staging-162103-apientest-933KAMZGA54K",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.3\",\"stackType\":\"api-AppSync\",\"metadata\":{}}",
+            "CreationTime": "2021-12-24T16:28:57.682000+00:00",
+            "LastUpdatedTime": "2021-12-25T06:04:37.010000+00:00",
+            "StackStatus": "UPDATE_ROLLBACK_COMPLETE",
+            "ParentId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103/7dc44870-64d5-11ec-a158-02f1730b1a9a",
+            "RootId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103/7dc44870-64d5-11ec-a158-02f1730b1a9a",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-amplify4628d24d5e144-staging-162103/7dc44870-64d5-11ec-a158-02f1730b1a9a",
+            "StackName": "amplify-amplify4628d24d5e144-staging-162103",
+            "TemplateDescription": "Root stack for the Amplify AWS CloudFormation provider",
+            "CreationTime": "2021-12-24T16:21:04.330000+00:00",
+            "LastUpdatedTime": "2021-12-25T06:04:31.243000+00:00",
+            "StackStatus": "UPDATE_ROLLBACK_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17-ConnectionStack-I1L4B8QYO1KW/cec37bf0-64c7-11ec-a407-06645615fda8",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17-ConnectionStack-I1L4B8QYO1KW",
+            "CreationTime": "2021-12-24T14:43:07.307000+00:00",
+            "DeletionTime": "2021-12-26T00:16:41.217000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-Author-TAE7VPTFW4DS/a510e4a0-64c7-11ec-b075-023713321ac4",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-Author-TAE7VPTFW4DS",
+            "CreationTime": "2021-12-24T14:41:57.379000+00:00",
+            "DeletionTime": "2021-12-26T00:16:41.329000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-Page-9QI6G28Z60NA/9f00ebf0-64c7-11ec-8888-0aeddcce6796",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-Page-9QI6G28Z60NA",
+            "CreationTime": "2021-12-24T14:41:47.194000+00:00",
+            "DeletionTime": "2021-12-26T00:16:41.378000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-Question-RZZ775X8EWME/9ed6ceb0-64c7-11ec-8bd1-0a589970809e",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-Question-RZZ775X8EWME",
+            "CreationTime": "2021-12-24T14:41:46.947000+00:00",
+            "DeletionTime": "2021-12-26T00:16:53.198000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestaws-dev-162843-authentestawsbe171fc2-18DUEXYW3G25J/b25e8af0-64a3-11ec-b578-026ca6728f9a",
+            "StackName": "amplify-entestaws-dev-162843-authentestawsbe171fc2-18DUEXYW3G25J",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.3\",\"stackType\":\"auth-Cognito\",\"metadata\":{}}",
+            "CreationTime": "2021-12-24T10:24:37.811000+00:00",
+            "DeletionTime": "2021-12-24T17:13:53.309000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I-Page-P8NE06WE8FEO/869230d0-6231-11ec-bd8f-02a58faeed02",
+            "StackName": "amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I-Page-P8NE06WE8FEO",
+            "CreationTime": "2021-12-21T07:42:19.385000+00:00",
+            "DeletionTime": "2021-12-24T17:13:54.497000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I-CustomResourcesjson-HW9KIN9J974O/2c1878b0-5fea-11ec-b8ab-063d08642fdc",
+            "StackName": "amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I-CustomResourcesjson-HW9KIN9J974O",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-12-18T10:06:31.826000+00:00",
+            "DeletionTime": "2021-12-24T17:13:42.566000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I-ConnectionStack-R5I877Z6BNXI/1d722a90-5fea-11ec-8bd1-0a589970809e",
+            "StackName": "amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I-ConnectionStack-R5I877Z6BNXI",
+            "CreationTime": "2021-12-18T10:06:06.381000+00:00",
+            "LastUpdatedTime": "2021-12-21T07:42:57.184000+00:00",
+            "DeletionTime": "2021-12-24T17:13:54.336000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I-Question-1U3ZCTLK5UJR9/ece1c340-5fe9-11ec-a6c4-06721ca54702",
+            "StackName": "amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I-Question-1U3ZCTLK5UJR9",
+            "CreationTime": "2021-12-18T10:04:44.925000+00:00",
+            "LastUpdatedTime": "2021-12-21T07:42:19.613000+00:00",
+            "DeletionTime": "2021-12-24T17:14:17.189000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I-Author-1A66K2CHLT01/ec6c1e10-5fe9-11ec-b4ad-0aa7510d511a",
+            "StackName": "amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I-Author-1A66K2CHLT01",
+            "CreationTime": "2021-12-18T10:04:44.163000+00:00",
+            "LastUpdatedTime": "2021-12-21T07:42:19.420000+00:00",
+            "DeletionTime": "2021-12-24T17:13:54.542000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I/b2f91610-5fe9-11ec-aa67-0ab7d100cff2",
+            "StackName": "amplify-entestaws-dev-162843-apientestaws-PJJPR9W1VO6I",
+            "CreationTime": "2021-12-18T10:03:08.627000+00:00",
+            "LastUpdatedTime": "2021-12-24T14:11:09.165000+00:00",
+            "DeletionTime": "2021-12-24T17:13:39.347000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-entestaws-dev-162843/e72e0da0-5fe4-11ec-ad27-0697ef138812",
+            "StackName": "amplify-entestaws-dev-162843",
+            "TemplateDescription": "Root Stack for AWS Amplify CLI",
+            "CreationTime": "2021-12-18T09:28:47.798000+00:00",
+            "LastUpdatedTime": "2021-12-24T14:11:03.992000+00:00",
+            "DeletionTime": "2021-12-24T17:13:35.869000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-Message-193J7MM22HLZI/92b1ab20-596c-11ec-9944-0222c52c3aae",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-Message-193J7MM22HLZI",
+            "CreationTime": "2021-12-10T03:52:19.592000+00:00",
+            "LastUpdatedTime": "2021-12-24T14:41:57.407000+00:00",
+            "DeletionTime": "2021-12-26T00:16:41.455000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194-CustomResourcesjson-88ZF5JQ5I3SE/a01f3280-5969-11ec-993a-026960f49b34",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194-CustomResourcesjson-88ZF5JQ5I3SE",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-12-10T03:31:14.440000+00:00",
+            "DeletionTime": "2021-12-26T00:16:29.578000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-User-H1ERJAUIF18Y/6f6fd180-5969-11ec-882b-0240db8f8746",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-User-H1ERJAUIF18Y",
+            "CreationTime": "2021-12-10T03:29:51.947000+00:00",
+            "LastUpdatedTime": "2021-12-24T14:41:47.426000+00:00",
+            "DeletionTime": "2021-12-26T00:16:41.497000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-Message-YQDWOY3P00U5/6f6ec010-5969-11ec-af46-025f1e4a8bf4",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M-Message-YQDWOY3P00U5",
+            "CreationTime": "2021-12-10T03:29:51.937000+00:00",
+            "DeletionTime": "2021-12-10T03:43:23.373000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844-storages306c61b26-S686XDK5E1VZ/2e8a81b0-5969-11ec-bc63-02666b4f429e",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844-storages306c61b26-S686XDK5E1VZ",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.3\",\"stackType\":\"storage-S3\",\"metadata\":{}}",
+            "CreationTime": "2021-12-10T03:28:03.917000+00:00",
+            "DeletionTime": "2021-12-26T00:16:25.498000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844-authawsamplifynextjsdemo1f8eb973-136WWJVFG2FB2/2e8578a0-5969-11ec-a7a7-02939548843e",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844-authawsamplifynextjsdemo1f8eb973-136WWJVFG2FB2",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.3\",\"stackType\":\"auth-Cognito\",\"metadata\":{}}",
+            "CreationTime": "2021-12-10T03:28:03.913000+00:00",
+            "DeletionTime": "2021-12-26T00:16:40.757000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M/2e5a22e0-5969-11ec-82c9-069cd12b3bf0",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844-apiawsamplifynextjsdemo-194XH17LXMT6M",
+            "CreationTime": "2021-12-10T03:28:03.624000+00:00",
+            "LastUpdatedTime": "2021-12-24T16:18:00.108000+00:00",
+            "DeletionTime": "2021-12-26T00:16:25.938000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-awsamplifynextjsdemo-dev-95844/18f6f710-5965-11ec-948d-064340e8f01a",
+            "StackName": "amplify-awsamplifynextjsdemo-dev-95844",
+            "TemplateDescription": "Root Stack for AWS Amplify CLI",
+            "CreationTime": "2021-12-10T02:58:48.769000+00:00",
+            "LastUpdatedTime": "2021-12-24T16:17:53.696000+00:00",
+            "DeletionTime": "2021-12-26T00:16:22.190000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-CustomResourcesjson-672NMFL5D0Y3/f7fbb900-4b32-11ec-b5a5-0afd446500e0",
+            "StackName": "amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-CustomResourcesjson-672NMFL5D0Y3",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T01:24:43.180000+00:00",
+            "DeletionTime": "2021-12-24T17:13:52.587000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-ConnectionStack-J32ERRRZ2HB7/ef1595e0-4b32-11ec-a0e8-02f2f30e50fe",
+            "StackName": "amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-ConnectionStack-J32ERRRZ2HB7",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T01:24:28.312000+00:00",
+            "DeletionTime": "2021-12-24T17:14:04.582000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-Tester-FATMNH0TLJ3O/c8b47380-4b32-11ec-83c7-064340e8f01a",
+            "StackName": "amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-Tester-FATMNH0TLJ3O",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T01:23:23.914000+00:00",
+            "DeletionTime": "2021-12-24T17:14:16.760000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-Author-X60HVKGF6G9Q/c81acb90-4b32-11ec-9517-0aa1694f6c7c",
+            "StackName": "amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-Author-X60HVKGF6G9Q",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T01:23:22.888000+00:00",
+            "DeletionTime": "2021-12-24T17:14:04.483000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-TesterTestContent-1M7ZOB1UQ492Q/c8196c00-4b32-11ec-b2b9-0660d20132e0",
+            "StackName": "amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-TesterTestContent-1M7ZOB1UQ492Q",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T01:23:22.888000+00:00",
+            "DeletionTime": "2021-12-24T17:14:16.732000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-Message-1C5XQYSRYXCWZ/c7eda110-4b32-11ec-8d6c-061e18469078",
+            "StackName": "amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-Message-1C5XQYSRYXCWZ",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T01:23:22.609000+00:00",
+            "DeletionTime": "2021-12-24T17:14:04.432000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-TestContent-12Z2GB1I4S3SW/c7e25670-4b32-11ec-9633-0adf6a1caba0",
+            "StackName": "amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-TestContent-12Z2GB1I4S3SW",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T01:23:22.565000+00:00",
+            "DeletionTime": "2021-12-24T17:14:16.743000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-TestAnswer-H7POZUK97GF2/c8462150-4b32-11ec-ba2f-02666b4f429e",
+            "StackName": "amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP-TestAnswer-H7POZUK97GF2",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T01:23:22.332000+00:00",
+            "DeletionTime": "2021-12-24T17:14:16.818000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426-authielts50016025-1D94Z84OF88TB/bddda3f0-4b32-11ec-b7d7-022784b33244",
+            "StackName": "amplify-ielts-dev-81426-authielts50016025-1D94Z84OF88TB",
+            "CreationTime": "2021-11-22T01:23:05.757000+00:00",
+            "DeletionTime": "2021-12-24T17:14:03.174000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP/bdb66ce0-4b32-11ec-ba2f-02666b4f429e",
+            "StackName": "amplify-ielts-dev-81426-apiielts-1EB1G0PG6ZRVP",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T01:23:05.501000+00:00",
+            "LastUpdatedTime": "2021-11-22T04:28:32.491000+00:00",
+            "DeletionTime": "2021-12-24T17:13:49.258000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426-storages3754370f3-1CQOL3J6HIJQU/bdac81d0-4b32-11ec-a751-0a8eaffbb0d4",
+            "StackName": "amplify-ielts-dev-81426-storages3754370f3-1CQOL3J6HIJQU",
+            "TemplateDescription": "S3 resource stack creation using Amplify CLI",
+            "CreationTime": "2021-11-22T01:23:05.412000+00:00",
+            "DeletionTime": "2021-12-24T17:13:48.646000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-dev-81426/8b67a930-4b31-11ec-98e3-0a80f9323112",
+            "StackName": "amplify-ielts-dev-81426",
+            "TemplateDescription": "Root Stack for AWS Amplify CLI",
+            "CreationTime": "2021-11-22T01:14:30.643000+00:00",
+            "LastUpdatedTime": "2021-11-22T04:28:27.028000+00:00",
+            "DeletionTime": "2021-12-24T17:13:45.341000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-test-dev-80419/324922d0-4b30-11ec-9912-026ca6728f9a",
+            "StackName": "amplify-test-dev-80419",
+            "TemplateDescription": "Root Stack for AWS Amplify CLI",
+            "CreationTime": "2021-11-22T01:04:51.647000+00:00",
+            "DeletionTime": "2021-11-22T01:09:15.751000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-10353/0ff460f0-4b30-11ec-8c99-06ee9120fc96",
+            "StackName": "amplify-ielts-staging-10353",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"AmplifyAdmin\",\"createdWith\":\"7.4.5\",\"stackType\":\"root\",\"metadata\":{}}",
+            "CreationTime": "2021-11-22T01:03:54.027000+00:00",
+            "DeletionTime": "2021-11-22T01:08:01.508000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-CustomResourcesjson-1EO0PZ0QDF53X/2664d7b0-4b2c-11ec-8e32-027bd9452a3e",
+            "StackName": "amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-CustomResourcesjson-1EO0PZ0QDF53X",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T00:35:53.718000+00:00",
+            "DeletionTime": "2021-11-22T00:53:33.026000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-ConnectionStack-1L3AIAHRU61GS/16839890-4b2c-11ec-b7d7-022784b33244",
+            "StackName": "amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-ConnectionStack-1L3AIAHRU61GS",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T00:35:28.011000+00:00",
+            "DeletionTime": "2021-11-22T00:53:44.857000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-Message-1MCBYSJJ1P2CJ/f7f1f930-4b2b-11ec-af16-0a8075590c3a",
+            "StackName": "amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-Message-1MCBYSJJ1P2CJ",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T00:34:36.696000+00:00",
+            "DeletionTime": "2021-11-22T00:53:44.788000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-TestAnswer-1WGMUZ0JDSXKR/f7b90ee0-4b2b-11ec-9912-026ca6728f9a",
+            "StackName": "amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-TestAnswer-1WGMUZ0JDSXKR",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T00:34:36.399000+00:00",
+            "DeletionTime": "2021-11-22T00:53:56.729000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-Tester-EZZZYYMKKFCJ/f7bae3a0-4b2b-11ec-90eb-0608f45d9624",
+            "StackName": "amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-Tester-EZZZYYMKKFCJ",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T00:34:36.327000+00:00",
+            "DeletionTime": "2021-11-22T00:53:56.936000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-TesterTestContent-72FUEX4UJTH6/f7afe720-4b2b-11ec-bde6-063a302980e2",
+            "StackName": "amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-TesterTestContent-72FUEX4UJTH6",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T00:34:36.297000+00:00",
+            "DeletionTime": "2021-11-22T00:53:56.702000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-TestContent-1JTXSCUBI5L5O/f7a0a4e0-4b2b-11ec-b2f5-02f1730b1a9a",
+            "StackName": "amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-TestContent-1JTXSCUBI5L5O",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T00:34:36.203000+00:00",
+            "DeletionTime": "2021-11-22T00:53:56.640000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-Author-7I9XDW6H7BR7/f79421c0-4b2b-11ec-8e32-027bd9452a3e",
+            "StackName": "amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF-Author-7I9XDW6H7BR7",
+            "TemplateDescription": "An auto-generated nested stack.",
+            "CreationTime": "2021-11-22T00:34:36.147000+00:00",
+            "DeletionTime": "2021-11-22T00:53:44.817000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928-authreactjsenb380b92a-1B0NL92CK43KE/d7b2d0e0-4b2b-11ec-9fd2-060cc11e2be6",
+            "StackName": "amplify-ielts-staging-01928-authreactjsenb380b92a-1B0NL92CK43KE",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.4.5\",\"stackType\":\"auth-Cognito\",\"metadata\":{}}",
+            "CreationTime": "2021-11-22T00:33:42.612000+00:00",
+            "DeletionTime": "2021-11-22T00:53:43.341000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF/c94d5c50-4b2b-11ec-ab1a-0a4ded7b01d4",
+            "StackName": "amplify-ielts-staging-01928-apireactjsen-15TUT5Y9UMOKF",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.4.5\",\"stackType\":\"api-AppSync\",\"metadata\":{}}",
+            "CreationTime": "2021-11-22T00:33:18.432000+00:00",
+            "DeletionTime": "2021-11-22T00:53:29.495000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928-storages3b9e69f18-13880SYPDWZR3/c8d51f10-4b2b-11ec-ab1a-0a4ded7b01d4",
+            "StackName": "amplify-ielts-staging-01928-storages3b9e69f18-13880SYPDWZR3",
+            "TemplateDescription": "{\"createdOn\":\"Linux\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.4.5\",\"stackType\":\"storage-S3\",\"metadata\":{}}",
+            "CreationTime": "2021-11-22T00:33:17.654000+00:00",
+            "DeletionTime": "2021-11-22T00:53:29.148000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        },
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:610770234379:stack/amplify-ielts-staging-01928/db731f20-4b29-11ec-b93c-06bb258d373a",
+            "StackName": "amplify-ielts-staging-01928",
+            "TemplateDescription": "Root Stack for AWS Amplify Console",
+            "CreationTime": "2021-11-22T00:19:28.971000+00:00",
+            "LastUpdatedTime": "2021-11-22T00:33:10.700000+00:00",
+            "DeletionTime": "2021-11-22T00:53:25.686000+00:00",
+            "StackStatus": "DELETE_COMPLETE",
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        }
+    ]
+}

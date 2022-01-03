@@ -1,7 +1,7 @@
 # Codepipeline to Deploy A Lambda API Gateway 
 **03 JAN 2021 Hai Tran**
 ### Description 
-This note goes through how to create a AWS Codepipeline for a Lambda based API endpint. Below diagram illustrates how things work.</br>
+This note goes through how to create a AWS Codepipeline for a Lambda based API endpoint. Below diagram illustrates how things work.</br>
 ![codepipeline_api_gateway](https://user-images.githubusercontent.com/20411077/147917263-f555608d-ef22-454b-9a62-1b76fc94218a.png)
 Let's summary roles of each component: 
 - **Repository** can be GitHub, Bibucket, AWS CodeCommit 

@@ -15,7 +15,7 @@
   - Build a stack given the template.yaml 
 
 ### 1. Setup a git repository, lambda code, template.yaml, buildspec.yaml
-lambda handler python 
+lambda handler python. This is just a hello lambda function in python. 
 ```
 import json
 
@@ -33,7 +33,7 @@ def lambda_handler(event, context):
 
 
 ```
-buildspec.yml 
+buildspec.yml, need to provide a S3 bucket where template.yaml will be uploaded to. 
 ```
 version: 0.2
 phases:
@@ -49,7 +49,7 @@ artifacts:
     - outputtemplate.yaml
 
 ```
-template.yaml 
+template.yaml, there are two options 1) using normal cloudformation template or 2) using SAM. This template is for a lambda function and a API endpoint.  
 ```
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31

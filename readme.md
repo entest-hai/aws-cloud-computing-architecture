@@ -105,6 +105,7 @@ Connect to GitHub version 2.
 Create a CodeBuild and configure, need to assign a policy to enable CodeBuild read/write the S3 bucket. 
 - 3.3 Deploy stage </br>
 
-
+### 4. Check results 
+Go to AWS API Gateway console, find the new created API endpoint and curl to check. 
 
 

@@ -13,7 +13,7 @@ Let's summary roles of each component:
     - Choose ClodFormation as the deploy provider 
     - Need assigned IAM role to create stacks/resources 
 
-### 1. Setup a git repository, lambda code, template.yaml, buildspec.yaml
+### 1. Setup a git repository, lambda code, template.yaml, buildspec.yaml, a S3 bucket 
 Here is a hello **lambda handler** in python 
 ```
 import json
@@ -66,6 +66,10 @@ Resources:
             Method: GET
 
 ```
+Create a S3 bucket for CodeBuild 
+```
+example-codepipeline-lambda-demo
+```
 ### 2. Create a IAM role for the codepipeline and cloudformation 
 Create an IAM role to allow the CodePipeline to do things 
 ```
@@ -97,6 +101,19 @@ Create an IAM role to allow the CodePipeline to do things
 ```
 Assign a policy to the CodeBuild so it can access the S3 bucket 
 ```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "s3-object-lambda:*"
+            ],
+            "Resource": "arn:aws:s3:::example-codepipeline-lambda-demo/*"
+        }
+    ]
+}
 ```
 ### 3. Create a codepipeline 
 - 3.1 Source stage </br>

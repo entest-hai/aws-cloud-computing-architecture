@@ -15,7 +15,60 @@
   - Build a stack given the template.yaml 
 
 ### 1. Setup a git repository, lambda code, template.yaml, buildspec.yaml
+lambda handler python 
+```
+import json
 
+def lambda_handler(event, context):
+    # response 
+    return {
+        'statusCode': 200,
+        'headers': {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Allow-Methods": "OPTIONS,GET"
+        },
+         'body': json.dumps({'filename': 'Hello Codepipeline'},  indent=4, sort_keys=True, default=str)
+    }
+
+
+```
+buildspec.yml 
+```
+version: 0.2
+phases:
+  install:
+  build:
+    commands:
+      - export BUCKET=haitran-codepipeline-lambda-demo
+      - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file outputtemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - template.yaml
+    - outputtemplate.yaml
+
+```
+template.yaml 
+```
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Demo codepipeline with lambda api 
+Resources:
+  TimeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+      CodeUri: ./
+      Events:
+        MyTimeApi:
+          Type: Api
+          Properties:
+            Path: /TimeResource
+            Method: GET
+
+```
 ### 2. Create a IAM role for the codepipeline and cloudformation 
 
 ### 3. Create a codepipeline 

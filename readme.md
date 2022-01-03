@@ -1,21 +1,20 @@
 # Codepipeline to Deploy A Lambda API Gateway 
-**03 JAN 2021 TRAN MINH HAI**
+**03 JAN 2021 Hai Tran**
 ### Description 
-- When a code commit happens, it will triggers CodeCommit to run tests and output template.yaml for deploy stage. In this case, deploy provider is cloudformation, so the the template.yaml is used to build a stack. The missing part is the manual approval step?
-- Source code can be stored in GitHub, Bitbucket, or CodeCommit
-- CodeBuild need to be setup via buildspec.yaml
-  - Ubuntu environment
-  - Python, Nodejs environment
-  - Command to run tests 
-  - Output template.yaml and upload to a S3 bucket
-  - Where th S3 bucket name specified? 
-  - Artifacts
-  - Therefore, CodeBuild need to be assigned an IAM role to allow writing in to the S3 bucket 
-- CodeDeploy in this case has cloudformation as a deploy provider
-  - Build a stack given the template.yaml 
+This note goes through how to create a AWS Codepipeline for a Lambda based API endpint. Below diagram illustrates how things work.</br>
+Let's summary roles of each component: 
+- **Repository** can be GitHub, Bibucket, AWS CodeCommit 
+- **CodeBuild** 
+  - We need to create and configure a CodeBuild 
+  - We write buildspec.yaml to tell what CodeBuild does
+    - Run tests 
+    - Build template.yaml and upload to a S3 bucket (need assigned an IAM role)
+- **CodeDeploy** 
+    - Choose ClodFormation as the deploy provider 
+    - Need assigned IAM role to create stacks/resources 
 
 ### 1. Setup a git repository, lambda code, template.yaml, buildspec.yaml
-lambda handler python. This is just a hello lambda function in python. 
+Here is a hello **lambda handler** in python 
 ```
 import json
 
@@ -31,25 +30,23 @@ def lambda_handler(event, context):
          'body': json.dumps({'filename': 'Hello Codepipeline'},  indent=4, sort_keys=True, default=str)
     }
 
-
 ```
-buildspec.yml, need to provide a S3 bucket where template.yaml will be uploaded to. 
+Here is **buildspec.yml**, it package template.yaml and upload to a S3 bucket. 
 ```
 version: 0.2
 phases:
   install:
   build:
     commands:
-      - export BUCKET=haitran-codepipeline-lambda-demo
+      - export BUCKET=example-codepipeline-lambda-demo
       - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file outputtemplate.yaml
 artifacts:
   type: zip
   files:
     - template.yaml
     - outputtemplate.yaml
-
 ```
-template.yaml, there are two options 1) using normal cloudformation template or 2) using SAM. This template is for a lambda function and a API endpoint.  
+Here is **tempalte.yaml** for CodeDeploy to create stacks. This template is to build a simple Lambda function and a API endpoint with API Gateway. Note that there are two way 1) normal cloudformation template or 2) SAM 
 ```
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
@@ -70,10 +67,44 @@ Resources:
 
 ```
 ### 2. Create a IAM role for the codepipeline and cloudformation 
-
+Create an IAM role to allow the CodePipeline to do things 
+```
+{
+    "Statement": [
+        {
+            "Action": [
+                "apigateway:*",
+                "codedeploy:*",
+                "lambda:*",
+                "cloudformation:CreateChangeSet",
+                "iam:GetRole",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:PutRolePolicy",
+                "iam:AttachRolePolicy",
+                "iam:DeleteRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:PassRole",
+                "s3:GetObjectVersion",
+                "s3:GetBucketVersioning"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        }
+    ],
+    "Version": "2012-10-17"
+}
+```
+Assign a policy to the CodeBuild so it can access the S3 bucket 
+```
+```
 ### 3. Create a codepipeline 
-- 3.1 Source stage 
-- 3.2 Build stage 
-- 3.3 Deploy stage 
+- 3.1 Source stage </br>
+Connect to GitHub version 2. 
+- 3.2 Build stage </br>
+Create a CodeBuild and configure, need to assign a policy to enable CodeBuild read/write the S3 bucket. 
+- 3.3 Deploy stage </br>
+
+
 
 

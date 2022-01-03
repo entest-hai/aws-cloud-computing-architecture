@@ -123,6 +123,13 @@ Create a CodeBuild and configure, need to assign a policy to enable CodeBuild re
 - 3.3 Deploy stage </br>
 
 ### 4. Check results 
-Go to AWS API Gateway console, find the new created API endpoint and curl to check. 
+Go to AWS Lambda console to check the new created lambd fuction, its names should be 
+```
+LambdaPipelineDemoStack-TimeFunction-{id}
+```
+Go to AWS API Gateway console, find the new created API endpoint and curl to check, its name should be 
+```
+ https://{id}.execute-api.ap-southeast-1.amazonaws.com/Prod/TimeResource
+``` 
 
 

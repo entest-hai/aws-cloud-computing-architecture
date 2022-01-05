@@ -94,7 +94,7 @@
     const ctx = new (window.AudioContext || window.webkitAudioContent())
     const audio = document.getElementById("player")
     console.log(ctx.state)
-    document.addEventListener('click', function () {
+    audio.addEventListener('click', function () {
         ctx.resume().then(() => console.log(ctx.state))
         document.getElementById('player').play()
     })

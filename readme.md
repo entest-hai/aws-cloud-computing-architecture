@@ -72,7 +72,11 @@ Update
 aws s3control put-public-access-block --public-access-block-configuration BlockPublicPolicy=true --account-id "your account id"
 ```
 ## Part II Deliver the S3 hosted web with CloudFront
-### 1. Create a CloudFront distribution with the S3 bucket as an origin 
-### 2. Request a SSL certificate with the custom domain 
-### 3. Create an alternate domain 
+### 1. Create a CloudFront distribution with the S3 bucket as an origin
+![cloudfront_distribution](https://user-images.githubusercontent.com/20411077/148347041-12b265b4-22e9-4cfd-9137-56a702623e9a.png)
+### 2. Request a SSL certificate with the custom domain
+![request_cerfiticate_ssl](https://user-images.githubusercontent.com/20411077/148347068-71ae43bc-2893-4503-b192-3407d5df7f37.png)
+### 3. Create an alternate domain
+Use the certificate to add/update an alternate domain to the CloudFormation distribution in step 1. 
 ### 4. Create an Route 53 alias record with the CloudFront auto-gen domain
+![route_53_cloudfront_alias_record](https://user-images.githubusercontent.com/20411077/148347117-817e2e50-c136-4739-b922-7d97fa47abe5.png)

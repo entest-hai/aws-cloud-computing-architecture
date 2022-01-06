@@ -1,8 +1,12 @@
-# Host a static website using AWS S3 
-**16 DEC 2021 Hai Tran** <br>
-[AWS reference ](https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html#step2-create-bucket-config-as-website)
+# CloudFront to Deliver Static Web Hosted on S3 
+**06 JAN 2022 Hai Tran** <br>
+## References 
+- [CloudFront deliver static and dyanmic content](https://aws.amazon.com/blogs/networking-and-content-delivery/deliver-your-apps-dynamic-content-using-amazon-cloudfront-getting-started-template/)
+- [CloudFront S3 origin](https://aws.amazon.com/getting-started/hands-on/deliver-content-faster/)
+- [Route 53 alias record CloudFront domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html)
 
-### Create a S3 bucket 
+## Part I Host a static web using S3 
+### 1. Create a S3 bucket 
 [s3 cli mb](https://docs.aws.amazon.com/cli/latest/reference/s3/mb.html)
 ```
 aws s3 mb s3://bucket-name --region ap-southeast-1
@@ -11,7 +15,7 @@ verify
 ```
 aws s3 ls 
 ```
-### Copy web files to S3 
+### 2. Copy web files to S3 
 ```
 aws s3 cp . s3://bucket-name/ --recursive
 ```
@@ -19,12 +23,12 @@ verify
 ```
 aws s3 ls s3://bucket-name/ --recursive 
 ```
-### 403 error 
+### 3. 403 error 
 By default, Amazon S3 blocks public access to your account and buckets. If you want to use a bucket to host a static website, you can use these steps to edit your block public access settings.
 
-### Configure host a static website 
+### 4. Configure host a static website 
 ![enable_static_web_hosting_index](https://user-images.githubusercontent.com/20411077/146595602-22db6843-6282-45ba-814a-bca5040ef716.png)
-### Configure bucket policy 
+### 5. Configure bucket policy 
 After you edit S3 Block Public Access settings, you can add a bucket policy to grant public read access to your bucket. When you grant public read access, anyone on the internet can access your bucket.
 
 ```
@@ -45,7 +49,7 @@ After you edit S3 Block Public Access settings, you can add a bucket policy to g
 }
 ```
 
-### Block public bucket access 
+### 6. Block public bucket access 
 Check **public access block** of an account  
 ```
 aws s3control get-public-access-block --account id "your account id"
@@ -67,12 +71,8 @@ Update
 ```
 aws s3control put-public-access-block --public-access-block-configuration BlockPublicPolicy=true --account-id "your account id"
 ```
-
-## TODO: Note on S3 
-### S3 cost and best practice 
-### Configure CORS 
-Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. You can build rich client-side web application with Amazon S3 and selective allow cross-origin access to your Amazon S3 resources. [AWS CORS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManageCorsUsing.html)
-### Setup S3 VPC endpoint 
-### Setup policies for S3 bucket 
-### Setup IAM role to access S3 bucket 
-### Setup S3 encryption and KMS key 
+## Part II Deliver the S3 hosted web with CloudFront
+### 1. Create a CloudFront distribution with the S3 bucket as an origin 
+### 2. Request a SSL certificate with the custom domain 
+### 3. Create an alternate domain 
+### 4. Create an Route 53 alias record with the CloudFront auto-gen domain

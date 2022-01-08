@@ -51,5 +51,4 @@ Value
 #### Step 5. Send test email 
 Now we can send test emails from the custom domain to verified email in step 1. Then we go to the S3 bucket to check received emails, need to refresh or waits for few minutes somtimes. 
 ![send_test_email](https://user-images.githubusercontent.com/20411077/148641757-fac4c98d-2683-460e-9924-ba4c19d8364e.png)
-</br>
 ## Part II. Setup Workmail with Custom Domain 

@@ -57,7 +57,10 @@ Now we can send test emails from the custom domain to verified email in step 1. 
 </br>
 ## Part II. Setup Workmail with Custom Domain 
 ### Step 1. Create an organization
-Goto AWS Workmail console and create an organization with the custom domain. Noted the default **{yourname}.awsapps.com**, we can go here to login. 
+Goto AWS Workmail console and create an organization with the custom domain. Noted the default **{yourname}.awsapps.com**, we can go here to login.
+<br/>
+![create_organization](https://user-images.githubusercontent.com/20411077/148642029-cac8af8b-d764-4253-bd92-473497fcea47.png)
+<br/>
 ### Step 2. Create users like username@customdomain
 ### Step 3. Configure mail clients to receive it 
 Usually, with any mail clients such as thunderbird, ios mail, we need to parameters [detail here](https://docs.aws.amazon.com/workmail/latest/userguide/using_IMAP.html) <br/>

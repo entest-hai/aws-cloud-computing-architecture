@@ -254,3 +254,6 @@ Outputs:
           - ElasticLoadBalancer
           - DNSName
 ```
+
+### Inspect a CodePipeline stack 
+[Create a CodePipeline](https://s3.amazonaws.com/cloudformation-examples/user-guide/continuous-deployment/basic-pipeline.yml)

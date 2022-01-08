@@ -5,8 +5,6 @@
 - Stacks 
 - Change sets 
 ### How does it works? 
-[Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-howdoesitwork.html)
-</br>
 [<img src="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/images/create-stack-diagram.png ">](ref)
 </br>
 - Use IAM to give permissions to create resources 
@@ -254,3 +252,6 @@ Outputs:
           - ElasticLoadBalancer
           - DNSName
 ```
+
+### Reference 
+[Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-howdoesitwork.html)

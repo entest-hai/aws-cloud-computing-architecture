@@ -5,7 +5,9 @@ This note goes through how to setup SES (Simple Email Service) with a custom dom
 We need to do five steps 1) verify identities which are the custom domain and emails. Why need to verify emails here? Because the SES is in a sandbox environment before AWS approval for production, and need to apply for approval. In this sandbox environment, to test sending emails to an email, the email need to be verified first. 2) Create a S3 bucket and a policy to allow SES write emails into it. 3) Need to set receiving rules, and action to tell SES write receiving emails into the S3 bucekt. 4) Need to create a MX record in DNS provider, in this case Route 53 because the custom domain registered with Route 53. At this moment, this step is needed. When setup workmail, this step is easier as records are automatically generated and updated to the Route 53 DNS records. We will need to review and fix conflics if they occurs. **Note that receiving email configuration is only avaiable in three regions {us-east-1, us-west-1, us-west-2}**
 ### Step 1. Create and verify identities 
 Create and verify the custom domain.
+</br>
 ![create_verify_domain](https://user-images.githubusercontent.com/20411077/148641713-bfb47c6d-7553-4d6d-add6-b3a10bd86ba5.png)
+</br>
 Similar verify emails which will be used for send test email. 
 ### Step 2. Create S3 bucket to store email 
 This is policy to allow SES write email into it. 
@@ -50,5 +52,7 @@ Value
 ```
 #### Step 5. Send test email 
 Now we can send test emails from the custom domain to verified email in step 1. Then we go to the S3 bucket to check received emails, need to refresh or waits for few minutes somtimes. 
+</br>
 ![send_test_email](https://user-images.githubusercontent.com/20411077/148641757-fac4c98d-2683-460e-9924-ba4c19d8364e.png)
+</br>
 ## Part II. Setup Workmail with Custom Domain 

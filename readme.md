@@ -140,9 +140,8 @@ Also display the uploaded image
      echo '<img src="'.$target_file.'">';
    ?>
 ```
-<br/>
+
 ![display_uploaded_image](https://user-images.githubusercontent.com/20411077/148674152-6f9132c6-8fdc-4998-b18b-5139b902186c.png)
-<br/>
 
 ### SCP to transfer data between EC2 and local machine 
 scp copy from ec2 to local with pem key 

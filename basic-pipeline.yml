@@ -1,0 +1,229 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: On 08 JAN 2022, Hai Tran buld an AWS CodePipeline
+Metadata:
+  AWS::CloudFormation::Interface:
+    PrameterGroups:
+      - Label:
+          default: "CodePipeline Settings"
+        Parameters:
+          - PipelineName
+          - S3Bucket
+          - SourceS3Key
+          - Email
+      - Label:
+          default: "Test Stack Settings"
+        Parameters:
+          - TestStackName
+          - TemplateFileName
+          - TestStackConfig
+      - Label:
+          default: "Production Stack Settings"
+        Parameters:
+          - ChangeSetName
+          - ProdStackName
+          - ProdStackConfig
+
+Parameters:
+  PipelineName:
+    Description: A name for pipeline
+    Type: String
+  S3Bucket:
+    Description: The name of the S3 bucket that contains the source, same region
+    Type: String
+  SourceS3Key:
+    Default: wordpress-single-instance.zip
+    Description: The file name of the source zip
+  TemplateFileName:
+    Default: wordpress-single-instance.yaml
+    Description: The file name fo the wordpress template
+    Type: String
+  TestStackName:
+    Default: Test-MyWordPressSite
+    Description: A name for test wordpress stack
+    Type: String
+  TestStackConfig:
+    Default: test-stack-configuration.json
+    Description: the configuration file name for the wordpress stack
+    Type: String
+  ProdStackName:
+    Default: Prod-MyWordPressSite
+    Description: A name for the production wordpress stack
+    Type: String
+  ProdStackConfig:
+    Default: prod-stack-configuration.json
+    Description: The configuration file name for the production wordpress stack
+    Type: String
+  ChangeStackName:
+    Default: UpdatePreview-MyWordPressSite
+    Description: A name for the production wordpress stack change set
+    Type: String
+  Email:
+    Description: The email address where CodePipeline sends notifiations
+    Type: String
+
+Mappings:
+
+Conditions:
+
+Resources:
+  ArtifactStoreBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      VersioningConfiguration:
+        Status: Enabled
+
+  CodePipelineSNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      Subscription:
+        - Endpoint: !Ref Email
+          Protocol: email
+
+  Pipeline:
+    Type: AWS::CodePipeline::Pipeline
+    Properties:
+      Name: !Ref "PipelineName"
+      RoleArn: !GetAtt [PipelineRole, Arn]
+      ArtifactStore:
+        Type: S3
+        Location: !Ref "ArtifactStoreBucket"
+      DisableInboundStageTransitions: []
+      Stages:
+        - 
+          Name: S3Source
+          Actions:
+            - 
+              Name: TemplateSource
+              ActionTypeId:
+                Category: Source
+                Owner: AWS
+                Provider: S3
+                Version: '1'
+              Configuration:
+                S3Bucket: !Ref 'S3Bucket'
+                S3ObjectKey: !Ref 'SourceS3Key'
+              OutputArtifacts:
+                - 
+                  Name: TemplateSource
+              RunOrder: '1'
+        - 
+          Name: TestStage
+          Actions:
+            - 
+              Name: CreateStack
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: CloudFormation
+                Version: '1'
+              InputArtifacts:
+                - Name: TemplateSource
+              Configuration:
+                ActionMode: REPLACE_ON_FAILURE
+                RoleArn: !GetAtt [CFNRole, Arn]
+                StackName: !Ref TestStackName
+                TemplateConfiguration: !Sub "TemplateSource::${TestStackConfig}"
+                TemplatePath: !Sub "TemplateSource::${TemplateFileName}"
+              RunOrder: '1'
+        - 
+          Name: ProdStage 
+          Actions:
+            - 
+              Name: CreateChangeSet
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: CloudFormation
+                Version: '1'
+              InputArtifacts:
+                - 
+                  Name: TemplateSource
+              Configuration:
+                ActionMode: CHANGE_SET_REPLACE 
+                RoleArn: !GetAtt [CFNRole, Arn]
+                StackName: !Ref ProdStackName
+                TemplateConfiguration: !Sub "TemplateSource::${ProdStackConfig}"
+                TemplatePath: !Sub "TemplateSource::${TemplateFileName}"
+              RunOrder: '1'
+            - 
+              Name: ApproveChangeSet
+              ActionTypeId:
+                Category: Approval
+                Owner: AWS
+                Provider: Manual
+                Version: '1'
+              Configuration:
+                NotificationArn: !Ref CodePipelineSNSTopic 
+                CustomData: !Sub 'A new change set aws created, approve?'
+              RunOrder: '2'
+            - 
+              Name: ExecuteChangeSet
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: CloudFormation
+                Version: '1'
+              Configuration:
+                ActionMode: CHANGE_SET_EXECUTE
+                ChangeSetName: !Ref ChangeSetName 
+                RoleArn: !GetAtt [CFNRole, Arn]
+                StackName: !Ref ProdStackName
+              RunOrder: '3'
+
+CFNRole:
+  Type: AWS::IAM::Role
+  Properties:
+    AssumeRolePolicyDocument:
+      Statement:
+      - Action: ['sts:AssumeRole']
+        Effect: Allow
+        Principal: 
+          Service: [cloudformation.amazonaws.com]
+      Version: '2012-10-17'
+    Path: /
+    AssumeRolePolicyDocument: 
+    Policies:
+      - 
+       PolicyName: CloudFormationRole
+       PolicyDocument:
+         Version: "2012-10-17"
+         Statement:
+            - 'ec2:*'
+              Effect: "Allow"
+              Action: "*"
+              Resource: "*"
+
+PipelineRole:
+  Type: AWS::IAM::Role
+  Properties:
+    Path: /
+    AssumeRolePolicyDocument:
+      Statement:
+        - 
+          Action: ["sts:AssumeRole"]
+          Effect: Allow
+          Principal:
+            Service: [codepipeline.amazonaws.com]
+      Version: "2012-10-17"
+    Policies:
+      - 
+        PolicyName: "CodePipelineAccess"
+        PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - 
+              Action:
+                - 's3:*'
+                - 'cloudformation:CreateStack'
+                - 'cloudformation:DescribeStacks'
+                - 'cloudformation:DeleteStack'
+                - 'cloudformation:UpdateStack'
+                - 'cloudformation:CreateChangeSet'
+                - 'cloudformation:ExecuteChangeSet'
+                - 'cloudformation:DeleteChangeSet'
+                - 'cloudformation:DescribeChangeSet'
+                - 'cloudformation:SetStackPolicy'
+                - 'iam:PassRole'
+                - 'sns:Publish'
+              Effect: "Allow""
+              Resource: "*"

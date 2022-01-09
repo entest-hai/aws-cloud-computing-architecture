@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:300,600');
+
+        * {
+            box-sizing: border-box;
+            margin-top: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #444;
+            font-size: 1.1rem;
+        }
+
+        h1 {
+            font-size: 5rem;
+            color: #0F9;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            outline: 3px solid #FFF;
+            outline-offset: .25em;
+            display: inline-block;
+            margin: 0.25em 0 0.5em;
+        }
+
+        h1 span {
+            font-weight: 300;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5em;
+        }
+
+        p span {
+            color: #0F9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: .7em 1.7em;
+            background: #0F9;
+            color: #444;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #00cc7a;
+        }
+
+        .hero {
+            background-color: #444;
+            background-image: url(//unsplash.it/1000/600);
+            background-blend-mode: multiply;
+            background-size: cover;
+            height: 100vh;
+            padding: 1em;
+            color: #FFF;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sales-points {
+            padding: 12vh 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+
+        @media (min-width: 40rem) {
+            .sales-points {
+                flex-direction: row;
+            }
+        }
+
+        .sales-point {
+            flex-basis: 30%;
+        }
+
+        .cta {
+            background-image: url(//unsplash.it/600/400);
+            background-size: cover;
+            padding: 10vh 0;
+            color: #FFF;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .cta-text {
+            flex-basis: 100%;
+            padding: 0 2em;
+
+            @media (min-width: 40rem) {
+                flex-basis: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <p>Things are <span>awesome</span> here at</p>
+        <h1>Awesome<span>Co</span></h1>
+        <p>We <strong>Design</strong> and <strong>Develope Awesome</strong> stuff</p>
+    </div>
+
+    <div class="sales-points">
+        <div class="sales-point">
+            <h2>Sales Point 1</h2>
+            <p>Maecenas id volutpat tellus. Praesent at rhoncus ante, non sollicitudin nisl.</p>
+        </div>
+        <div class="sales-point">
+            <h2>Sales Point 2</h2>
+            <p>Maecenas id volutpat tellus. Praesent at rhoncus ante, non sollicitudin nisl.</p>
+        </div>
+        <div class="sales-point">
+            <h2>Sales Point 3</h2>
+            <p>Maecenas id volutpat tellus. Praesent at rhoncus ante, non sollicitudin nisl.</p>
+        </div>
+    </div>
+
+    <div class="cta">
+        <div class="cta-text">
+            <h2>Call to <span>Action</span></h2>
+            <p>Sed lacus leo, auctor ut odio non, tincidunt blandit nunc. Integer mauris dolor, maximus eu consectetur
+                non, imperdiet sit amet nisi. Nam in sem finibus mi hendrerit ornare eu eu leo. Interdum et malesuada
+                fames ac ante ipsum primis in faucibus. Sed vestibulum, magna sit amet interdum fringilla.</p>
+            <a href="" class="btn">Buy Now</a>
+        </div>
+    </div>
+</body>
+
+</html>
+

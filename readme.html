@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>readme.md</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+	<style>
+		/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+		/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+		body {
+			font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+			font-size: var(--vscode-markdown-font-size, 14px);
+			padding: 0 26px;
+			line-height: var(--vscode-markdown-line-height, 22px);
+			word-wrap: break-word;
+			max-width: 64rem;
+			margin: auto;
+		}
+
+		#code-csp-warning {
+			position: fixed;
+			top: 0;
+			right: 0;
+			color: white;
+			margin: 16px;
+			text-align: center;
+			font-size: 12px;
+			font-family: sans-serif;
+			background-color: #444444;
+			cursor: pointer;
+			padding: 6px;
+			box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+		}
+
+		#code-csp-warning:hover {
+			text-decoration: none;
+			background-color: #007acc;
+			box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
+		}
+
+		body.scrollBeyondLastLine {
+			margin-bottom: calc(100vh - 22px);
+		}
+
+		body.showEditorSelection .code-line {
+			position: relative;
+		}
+
+		body.showEditorSelection .code-active-line:before,
+		body.showEditorSelection .code-line:hover:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: -12px;
+			height: 100%;
+		}
+
+		body.showEditorSelection li.code-active-line:before,
+		body.showEditorSelection li.code-line:hover:before {
+			left: -30px;
+		}
+
+		.vscode-light.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(0, 0, 0, 0.15);
+		}
+
+		.vscode-light.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(0, 0, 0, 0.40);
+		}
+
+		.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		.vscode-dark.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(255, 255, 255, 0.4);
+		}
+
+		.vscode-dark.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(255, 255, 255, 0.60);
+		}
+
+		.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(255, 160, 0, 0.7);
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(255, 160, 0, 1);
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		a:focus,
+		input:focus,
+		select:focus,
+		textarea:focus {
+			outline: 1px solid -webkit-focus-ring-color;
+			outline-offset: -1px;
+		}
+
+		hr {
+			border: 0;
+			height: 2px;
+			border-bottom: 2px solid;
+		}
+
+		h1 {
+			padding-bottom: 0.3em;
+			line-height: 1.2;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+		}
+
+		h1,
+		h2,
+		h3 {
+			font-weight: normal;
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+
+		table>thead>tr>th {
+			text-align: left;
+			border-bottom: 1px solid;
+		}
+
+		table>thead>tr>th,
+		table>thead>tr>td,
+		table>tbody>tr>th,
+		table>tbody>tr>td {
+			padding: 5px 10px;
+		}
+
+		table>tbody>tr+tr>td {
+			border-top: 1px solid;
+		}
+
+		blockquote {
+			margin: 0 7px 0 5px;
+			padding: 0 16px 0 10px;
+			border-left-width: 5px;
+			border-left-style: solid;
+		}
+
+		code {
+			font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+			font-size: 1em;
+			line-height: 1.357em;
+		}
+
+		body.wordWrap pre {
+			white-space: pre-wrap;
+		}
+
+		pre:not(.hljs),
+		pre.hljs code>div {
+			padding: 16px;
+			border-radius: 3px;
+			overflow: auto;
+		}
+
+		pre code {
+			color: var(--vscode-editor-foreground);
+			tab-size: 4;
+		}
+
+		/** Theming */
+
+		.vscode-light pre {
+			background-color: rgba(220, 220, 220, 0.4);
+		}
+
+		.vscode-dark pre {
+			background-color: rgba(10, 10, 10, 0.4);
+		}
+
+		.vscode-high-contrast pre {
+			background-color: rgb(0, 0, 0);
+		}
+
+		.vscode-high-contrast h1 {
+			border-color: rgb(0, 0, 0);
+		}
+
+		.vscode-light table>thead>tr>th {
+			border-color: rgba(0, 0, 0, 0.69);
+		}
+
+		.vscode-dark table>thead>tr>th {
+			border-color: rgba(255, 255, 255, 0.69);
+		}
+
+		.vscode-light h1,
+		.vscode-light hr,
+		.vscode-light table>tbody>tr+tr>td {
+			border-color: rgba(0, 0, 0, 0.18);
+		}
+
+		.vscode-dark h1,
+		.vscode-dark hr,
+		.vscode-dark table>tbody>tr+tr>td {
+			border-color: rgba(255, 255, 255, 0.18);
+		}
+	</style>
+
+	<style>
+		/* Tomorrow Theme */
+		/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+		/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+		/* Tomorrow Comment */
+		.hljs-comment,
+		.hljs-quote {
+			color: #8e908c;
+		}
+
+		/* Tomorrow Red */
+		.hljs-variable,
+		.hljs-template-variable,
+		.hljs-tag,
+		.hljs-name,
+		.hljs-selector-id,
+		.hljs-selector-class,
+		.hljs-regexp,
+		.hljs-deletion {
+			color: #c82829;
+		}
+
+		/* Tomorrow Orange */
+		.hljs-number,
+		.hljs-built_in,
+		.hljs-builtin-name,
+		.hljs-literal,
+		.hljs-type,
+		.hljs-params,
+		.hljs-meta,
+		.hljs-link {
+			color: #f5871f;
+		}
+
+		/* Tomorrow Yellow */
+		.hljs-attribute {
+			color: #eab700;
+		}
+
+		/* Tomorrow Green */
+		.hljs-string,
+		.hljs-symbol,
+		.hljs-bullet,
+		.hljs-addition {
+			color: #718c00;
+		}
+
+		/* Tomorrow Blue */
+		.hljs-title,
+		.hljs-section {
+			color: #4271ae;
+		}
+
+		/* Tomorrow Purple */
+		.hljs-keyword,
+		.hljs-selector-tag {
+			color: #8959a8;
+		}
+
+		.hljs {
+			display: block;
+			overflow-x: auto;
+			color: #4d4d4c;
+			padding: 0.5em;
+		}
+
+		.hljs-emphasis {
+			font-style: italic;
+		}
+
+		.hljs-strong {
+			font-weight: bold;
+		}
+	</style>
+
+	<style>
+		/*
+ * Markdown PDF CSS
+ */
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+			padding: 0 12px;
+		}
+
+		pre {
+			background-color: #f8f8f8;
+			border: 1px solid #cccccc;
+			border-radius: 3px;
+			overflow-x: auto;
+			white-space: pre-wrap;
+			overflow-wrap: break-word;
+		}
+
+		pre:not(.hljs) {
+			padding: 23px;
+			line-height: 19px;
+		}
+
+		blockquote {
+			background: rgba(127, 127, 127, 0.1);
+			border-color: rgba(0, 122, 204, 0.5);
+		}
+
+		.emoji {
+			height: 1.4em;
+		}
+
+		code {
+			font-size: 14px;
+			line-height: 19px;
+		}
+
+		/* for inline code */
+		:not(pre):not(.hljs)>code {
+			color: #C9AE75;
+			/* Change the old color so it seems less like an error */
+			font-size: inherit;
+		}
+
+		/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+		.page {
+			page-break-after: always;
+		}
+	</style>
+
+	<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+	<script>
+		mermaid.initialize({
+			startOnLoad: true,
+			theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+				? 'dark'
+				: 'default'
+		});
+	</script>
+	<h1 id="setup-aws-ses-and-workmail-with-custom-domain">Setup AWS SES and Workmail with Custom Domain</h1>
+	<p><strong>08 JAN 2022 Hai Tran</strong>
+		This note goes through how to setup SES (Simple Email Service) with a custom domain and receive emails in S3.
+		Then also setup Workmail with the custom domain.</p>
+	<h2 id="part-i-setup-aws-ses-with-custom-domain-and-receive-emails-in-s3">Part I. Setup AWS SES with Custom Domain
+		and Receive Emails in S3</h2>
+	<p>We need to do five steps 1) verify identities which are the custom domain and emails. Why need to verify emails
+		here? Because the SES is in a sandbox environment before AWS approval for production, and need to apply for
+		approval. In this sandbox environment, to test sending emails to an email, the email need to be verified first.
+		2) Create a S3 bucket and a policy to allow SES write emails into it. 3) Need to set receiving rules, and action
+		to tell SES write receiving emails into the S3 bucekt. 4) Need to create a MX record in DNS provider, in this
+		case Route 53 because the custom domain registered with Route 53. At this moment, this step is needed. When
+		setup workmail, this step is easier as records are automatically generated and updated to the Route 53 DNS
+		records. We will need to review and fix conflics if they occurs. <strong>Note that receiving email configuration
+			is only avaiable in three regions {us-east-1, us-west-1, us-west-2}</strong></p>
+	<h3 id="step-1-create-and-verify-identities">Step 1. Create and verify identities</h3>
+	<p>Create and verify the custom domain.
+		</br>
+		<img src="https://user-images.githubusercontent.com/20411077/148641713-bfb47c6d-7553-4d6d-add6-b3a10bd86ba5.png"
+			alt="create_verify_domain">
+		</br>
+		Similar verify emails which will be used for send test email.
+	</p>
+	<h3 id="step-2-create-s3-bucket-to-store-email">Step 2. Create S3 bucket to store email</h3>
+	<p>This is policy to allow SES write email into it.</p>
+	<pre class="hljs"><code><div>{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Sid&quot;: &quot;AllowSESPuts&quot;,
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Principal&quot;: {
+                &quot;Service&quot;: &quot;ses.amazonaws.com&quot;
+            },
+            &quot;Action&quot;: &quot;s3:PutObject&quot;,
+            &quot;Resource&quot;: &quot;arn:aws:s3:::BUCKET_NAME/*&quot;,
+            &quot;Condition&quot;: {
+                &quot;StringEquals&quot;: {
+                    &quot;aws:Referer&quot;: &quot;ACCOUNT_ID&quot;
+                }
+            }
+        }
+    ]
+}
+</div></code></pre>
+	<h3 id="step-3-set-up-a-receipt-rule">Step 3. Set up a receipt rule</h3>
+	<p><img src="https://user-images.githubusercontent.com/20411077/148641724-d8fc963d-3ca6-44a7-a0ef-f79ef7f0ec43.png"
+			alt="create_rule_set">
+		</br>
+		Add actions choose <strong>Deliver to S3 bucket</strong> and choose the bucket created in step 2.<br>
+		<img src="https://user-images.githubusercontent.com/20411077/148641717-decda9ae-6c5d-49f5-bd23-d6d9a9724c3c.png"
+			alt="create_set_rule_devliver_s3">
+		</br>
+	</p>
+	<h3 id="step-4-create-an-mx-record-in-the-route-53">Step 4. Create an MX record in the Route 53</h3>
+	<p>Details in here <a
+			href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-mx-record.html">Publishing an MX
+			record for SES email receiving</a>. In this case, the custom domain is registered with Route 53, so need to
+		go to Route 53 console, create a MX record with following information. </br>
+		<img src="https://user-images.githubusercontent.com/20411077/148641743-eedd9956-5feb-4f7f-a1cc-a0eb638a38e1.png"
+			alt="create_mx_record">
+		</br>
+		MX record Name
+	</p>
+	<pre class="hljs"><code><div>the custom domain 
+</div></code></pre>
+	<p>Value</p>
+	<pre class="hljs"><code><div>10 inbound-smtp.us-east-1.amazonaws.com
+</div></code></pre>
+	<h4 id="step-5-send-test-email">Step 5. Send test email</h4>
+	<p>Now we can send test emails from the custom domain to verified email in step 1. Then we go to the S3 bucket to
+		check received emails, need to refresh or waits for few minutes somtimes.
+		</br>
+		<img src="https://user-images.githubusercontent.com/20411077/148641757-fac4c98d-2683-460e-9924-ba4c19d8364e.png"
+			alt="send_test_email">
+		</br>
+	</p>
+	<h2 id="part-ii-setup-workmail-with-custom-domain">Part II. Setup Workmail with Custom Domain</h2>
+	<h3 id="step-1-create-an-organization">Step 1. Create an organization</h3>
+	<p>Goto AWS Workmail console and create an organization with the custom domain. Noted the default
+		<strong>{yourname}.awsapps.com</strong>, we can go here to login.
+		<br />
+		<img src="https://user-images.githubusercontent.com/20411077/148642029-cac8af8b-d764-4253-bd92-473497fcea47.png"
+			alt="create_organization">
+		<br />
+	</p>
+	<h3 id="step-2-create-users-like-usernamecustomdomain">Step 2. Create users like username@customdomain</h3>
+	<h3 id="step-3-configure-mail-clients-to-receive-it">Step 3. Configure mail clients to receive it</h3>
+	<p>Usually, with any mail clients such as thunderbird, ios mail, we need to parameters <a
+			href="https://docs.aws.amazon.com/workmail/latest/userguide/using_IMAP.html">detail here</a> <br />
+		IMAP server</p>
+	<pre class="hljs"><code><div>us-east-1.imap.mail.us-east-1.awsapps.com
+</div></code></pre>
+	<p>SMTP server</p>
+	<pre class="hljs"><code><div>us-east-1.smtp.mail.us-east-1.awsapps.com
+</div></code></pre>
+
+</body>
+
+</html>

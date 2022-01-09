@@ -81,6 +81,9 @@ Step 1. Folder structure as
 ```
 
 Step 2. Create upload.php for an upload form as requirement 
+<br/>
+![upload_form](https://user-images.githubusercontent.com/20411077/148674113-2ec68e38-1dfb-453e-802c-d9b3ebf34691.png)
+<br/>
 
 ```
 <form action="handle.php" method="POST" enctype="multipart/form-data">
@@ -99,7 +102,6 @@ Step 2. Create upload.php for an upload form as requirement
         </button>
 </form>
 ```
-
 Step 3. Write handle.php to save the uploading file 
 ```
  <?php
@@ -138,9 +140,11 @@ Also display the uploaded image
      echo '<img src="'.$target_file.'">';
    ?>
 ```
+<br/>
+![display_uploaded_image](https://user-images.githubusercontent.com/20411077/148674152-6f9132c6-8fdc-4998-b18b-5139b902186c.png)
+<br/>
 
-
-### Bonus 
+### SCP to transfer data between EC2 and local machine 
 scp copy from ec2 to local with pem key 
 ```
 scp -r -i ~/aws/haitran-swin-free-ec2.pem ec2-user@13.213.5.166:/var/www/html/cos20019/photoalbum/ . 

@@ -61,10 +61,6 @@ Parameters:
     Description: The email address where CodePipeline sends notifiations
     Type: String
 
-Mappings:
-
-Conditions:
-
 Resources:
   ArtifactStoreBucket:
     Type: AWS::S3::Bucket

@@ -86,7 +86,10 @@ def lambda_handler(event, context):
           Permissions: "0777"
         Path: "/efs"
 ```
-#### Step 5. Mount EFS access point to EC2 
+#### Step 5. Mount EFS access point to EC2
+What is "to mount"? It means to tell the operating system about the hard disk. What is "mount point"? the operating system will see the hard disk partion as a directory. How to mount a EFS file system or access point to EC2? There are several ways, but an easy way is to AWS mount helper. So we need to install the mount helper from this Github repository [mount helper](https://github.com/aws/efs-utils). Then mount an accesspoint to EC2 by the below command. 
+
+
 - Install efs-utils for ubuntun [git repo](https://github.com/aws/efs-utils)
 - mount the access point on an EC2 [mount](https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html)
 - [mount access point command](https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html)

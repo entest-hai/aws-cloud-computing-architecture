@@ -1,12 +1,9 @@
 # Setup AWS ECS Faragte with Application Load Balancer
 **18 JAN 2022 Hai Tran**
 #### Summary 
-This note goes through how to setup AWS ECS Fargate with an ALB to run an Flask Python app in multiple tasks, each tasks configured with 1 CPU and 2048MB RAM. It is noted that we should configure ALB **inbound** from all IP with port 80, and configure **ECS inbound** from the ALB on port 8081 in this case. The ALB will forward requests to ECS tasks. Role can be assigned to the tasks to grant access to DynamoDB or S3 bucket. This is low level than Lambda, like go backward from python to C. 
+This note goes through how to setup AWS ECS Fargate with an ALB to run an Flask Python app in multiple tasks, each tasks configured with 1 CPU and 2048MB RAM. It is noted that we should configure ALB **inbound** from all IP with port 80, and configure **ECS inbound** from the ALB on port 8081 in this case. The ALB will forward requests to ECS tasks. Role can be assigned to the tasks to grant access to DynamoDB or S3 bucket. Multiple tasks are used to handle tasks, keep running all the time so it will take more costs when more idel time compared with Lamba. It need a bit of setup and configuration compared with Lambad, like moving backward from python to C. 
 
-<br/>
 ![aws-ecs](https://user-images.githubusercontent.com/20411077/149967893-3e23b343-64f4-4c0e-b157-9c292053c09f.png)
-<br/>
-
 
 #### Step 1. Prepare a Docker script 
 ```

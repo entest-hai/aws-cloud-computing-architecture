@@ -42,15 +42,15 @@ aws ecr get-login-password --region region | docker login --username AWS --passw
 ```
 tag 
 ```
-sudo docker tag dc73321f7fab 717869305038.dkr.ecr.ap-southeast-1.amazonaws.com/flask-app:latest
+sudo docker tag dc73321f7fab aws_account_id.dkr.ecr.ap-southeast-1.amazonaws.com/flask-app:latest
 ```
 push 
 ```
-sudo docker push 717869305038.dkr.ecr.ap-southeast-1.amazonaws.com/flask-app:latest
+sudo docker push aws_account_id.dkr.ecr.ap-southeast-1.amazonaws.com/flask-app:latest
 ```
 go to aws console and take note the image id
 ```
-717869305038.dkr.ecr.ap-southeast-1.amazonaws.com/flask-app:latest
+aws_account_id.dkr.ecr.ap-southeast-1.amazonaws.com/flask-app:latest
 ```
 #### Step 2. Setup an ECS cluster and task definition
 go to aws console ecs service and create a cluster named **FhrProcessingCluster** <br/>

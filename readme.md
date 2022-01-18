@@ -52,29 +52,62 @@ go to aws console and take note the image id
 ```
 717869305038.dkr.ecr.ap-southeast-1.amazonaws.com/flask-app:latest
 ```
-#### Step 2. Setup an ECS cluster 
+#### Step 2. Setup an ECS cluster and task definition
 go to aws console ecs service and create a cluster named **FhrProcessingCluster** <br/>
-create a cluster <br/> 
+create a cluster 
+<br/> 
+![create_cluster](https://user-images.githubusercontent.com/20411077/149961773-9db384ff-ef68-4ca1-8e5e-83ef234a5573.png)
+<br/> 
+create a task definition 
+<br/>
+![create_task](https://user-images.githubusercontent.com/20411077/149961838-f29d8462-5238-45bb-9a3b-d90f79dd098c.png)
+<br/>
+view task definition 
+<br/>
+![create_fargate_task](https://user-images.githubusercontent.com/20411077/149961888-d0160b91-02d9-459d-9b15-5e0dfabf7ac9.png)
+<br/>
+add container 
+</br>
+![add_container](https://user-images.githubusercontent.com/20411077/149962000-e2dfcd44-5b33-47ff-8f34-c2e9742aa280.png)
+</br>
+create load balancer as step 4. 
+<br/>
+![create_load_balancer](https://user-images.githubusercontent.com/20411077/149962043-a31739e5-d71f-4ec0-9f14-81196b0ae131.png)
+<br/>
 
-create a task definition <br/>
+create a service 
+<br/> 
+![configure_ecs_service_container](https://user-images.githubusercontent.com/20411077/149962079-4539d0d7-af0b-4936-856c-13fef75aca49.png)
+<br/> 
+configure network for the ecs service 
+<br/>
+![configure_network_service](https://user-images.githubusercontent.com/20411077/149962130-b2a3e2d2-245a-4d3f-ac48-0e2ef830bd85.png)
+<br/>
+configure container for the ecs service 
+<br/>
+![configure_ecs_service_container](https://user-images.githubusercontent.com/20411077/149962199-f6d43403-6ba3-4df6-ae94-4b8f0948d7cb.png)
+<br/>
+**important configure security for ecs service so that inbound from the ALB enabled**
+<br/>
+![configure_security_group_for_ecs_inbound_from_alb](https://user-images.githubusercontent.com/20411077/149962339-ceae5ced-e1c1-4260-82fd-28ec513fd0f4.png)
+<br/>
 
-view task definition <br/>
-
-create load balancer as step 4. <br/>
-
-create a service <br/> 
-
-#### Step 3. Define a Fargate task 
-#### Step 4. Setup an Application Load Balancer
+#### Step 3. Setup an Application Load Balancer
 go to ec2 service and choose load balancer <br/>
 
-create a load balancer <br/>
+create a load balancer 
+<br/>
+![create_load_balancer](https://user-images.githubusercontent.com/20411077/149961558-389953e9-958e-496c-b150-2c3ae32ae91e.png)
+<br/>
 
-setup security group inbound open 80 from all<br/>
+setup security group inbound open 80 from all 
+<br/>
+![create_fhr_alb](https://user-images.githubusercontent.com/20411077/149962450-c7da9c2b-1c2c-418d-a7a6-5b9daa01c541.png)
+<br/>
 
 forward to port 8081 of the target group ecs <br/>
 
 setup target group with ecs fargate <br/>
 
-#### Step 5. Check security group and connection 
+#### Step 4. Check security group and connection 
 

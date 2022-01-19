@@ -41,9 +41,10 @@ go to browser and check the web server flask is running
 http://localhost:56733
 ```
 push docker image to aws ecr [follow this](https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-push-ecr-image.html) <br/>
-authenticate with a profile noted 
+authenticate with a profile noted <br/>
+goto aws ecr console to create a repository named **flask-app**
 ```
-aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com
+aws ecr get-login-password --region region --profile username | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com
 ```
 tag 
 ```

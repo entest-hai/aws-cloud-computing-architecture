@@ -9,6 +9,6 @@ def lambda_handler(event, context):
             "Access-Control-Allow-Headers": "Content-Type",
             "Access-Control-Allow-Methods": "OPTIONS,GET"
         },
-         'body': json.dumps({'filename': 'Hello Codepipeline'},  indent=4, sort_keys=True, default=str)
+         'body': json.dumps({'filename': 'Create git push'},  indent=4, sort_keys=True, default=str)
     }
 

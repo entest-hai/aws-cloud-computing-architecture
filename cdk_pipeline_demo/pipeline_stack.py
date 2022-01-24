@@ -19,7 +19,7 @@ class PipelineStack(Stack):
         pipeline = pipelines.CodePipeline(
             self,
             'Pipeline',
-            pipeline_name='WebinarPipeline',
+            pipeline_name='CdkPipelineDemo',
             synth=pipelines.ShellStep(
                 'Synth',
                 input=pipelines.CodePipelineSource.connection(

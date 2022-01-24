@@ -23,10 +23,10 @@ class PipelineStack(Stack):
             synth=pipelines.ShellStep(
                 'Synth',
                 input=pipelines.CodePipelineSource.connection(
-                    "entest-hai/aws-cloud-computing-architecture/",
+                    "entest-hai/aws-cloud-computing-architecture",
                     "cdk-pipeline-demo",
                     connection_arn="arn:aws:codestar-connections:ap-southeast-1:610770234379:connection/ae577773-a348-472d-96cd-0f3ceb656c09"
                 ),
-                commands=["pip install -r requirements.txt", "cdk synth"]
+                commands=["pip install -r requirements.txt", "npm install -g aws-cdk", "cdk synth"
             )
         )

@@ -1,5 +1,5 @@
 def handler(event, context):
   return {
-    'body': 'This is fetal SQI',
+    'body': 'Demo lambda fhr with cdk python pipeline',
     'statusCode': '500'
   }

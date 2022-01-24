@@ -47,11 +47,6 @@ class AwsCloudComputingArchitectureStack(Stack):
                 "prod"
             ),
             pre=[
-                # pipelines.ManualApprovalStep("PromotedToProd")
-                aws_codepipeline_actions.ManualApprovalAction(
-                    action_name="ManualApproval",
-                    notification_topic=aws_sns.Topic(self, "CdkCodePipelineLambdaApiDemoNotification"),
-                    notify_emails=["hai@bio-rithm.com", "hai@entest.io"]
-                )
+                pipelines.ManualApprovalStep("PromotedToProd")
             ]
         )

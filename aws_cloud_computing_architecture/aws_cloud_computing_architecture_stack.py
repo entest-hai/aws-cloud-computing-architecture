@@ -35,10 +35,7 @@ class AwsCloudComputingArchitectureStack(Stack):
             LambdaApiStageDemo(
                 self,
                 "pre-prod"
-            ),
-            pre=[
-                pipelines.ManualApprovalStep("PromotedToProd")
-            ]
+            )
         )
 
         # add prod-stage
@@ -46,5 +43,8 @@ class AwsCloudComputingArchitectureStack(Stack):
             LambdaApiStageDemo(
                 self,
                 "prod"
-            )
+            ),
+            pre=[
+                pipelines.ManualApprovalStep("PromotedToProd")
+            ]
         )

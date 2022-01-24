@@ -15,9 +15,6 @@ class PipelineStack(Stack):
     def __init__(self, scope: Construct, id: str, **kwargs):
         super().__init__(scope, id, **kwargs)
 
-        source_artifact = aws_codepipeline.Artifact()
-        cloud_assembly_artifcat = aws_codepipeline.Artifact()
-
         # create a cdk pipeline
         pipeline = pipelines.CodePipeline(
             self,
@@ -26,8 +23,8 @@ class PipelineStack(Stack):
             synth=pipelines.ShellStep(
                 'Synth',
                 input=pipelines.CodePipelineSource.connection(
-                    "entest-hai/aws-cloud-computing-architecture/cdk-pipeline-demo/",
-                    "codepipeline-lambda",
+                    "entest-hai/aws-cloud-computing-architecture/",
+                    "cdk-pipeline-demo",
                     connection_arn="arn:aws:codestar-connections:ap-southeast-1:610770234379:connection/ae577773-a348-472d-96cd-0f3ceb656c09"
                 ),
                 commands=["pip install -r requirements.txt", "cdk synth"]

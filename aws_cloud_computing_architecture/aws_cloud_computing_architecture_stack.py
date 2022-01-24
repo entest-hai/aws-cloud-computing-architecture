@@ -31,13 +31,20 @@ class AwsCloudComputingArchitectureStack(Stack):
         )
 
         # add pre-prod stage
-        pipeline.add_stage(
+        pre_prod_stage = pipeline.add_stage(
             LambdaApiStageDemo(
                 self,
                 "pre-prod"
-            )
+            ),
+            pre=[
+                pipelines.ManualApprovalStep("PromotedToProd")
+            ]
         )
 
-        # add manual review stage with email notification
-
         # add prod-stage
+        pipeline.add_stage(
+            LambdaApiStageDemo(
+                self,
+                "prod"
+            )
+        )

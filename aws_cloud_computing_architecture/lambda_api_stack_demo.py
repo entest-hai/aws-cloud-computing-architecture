@@ -31,22 +31,22 @@ class LambdaApiStackDemo(Stack):
             description='Endpoint for a simple Lambda-powered web service',
             handler=alias)
 
-        failure_alarm = cloudwatch.Alarm(self, 'FailureAlarm',
-            metric=cloudwatch.Metric(
-                metric_name='5XXError',
-                namespace='AWS/ApiGateway',
-                dimensions_map={
-                    'ApiName': 'Gateway',
-                },
-                statistic='Sum',
-                period=Duration.minutes(1)),
-            threshold=1,
-            evaluation_periods=1)
-
-        codedeploy.LambdaDeploymentGroup(self, 'DeploymentGroup',
-            alias=alias,
-            deployment_config=codedeploy.LambdaDeploymentConfig.CANARY_10_PERCENT_10_MINUTES,
-            alarms=[failure_alarm])
+        # failure_alarm = cloudwatch.Alarm(self, 'FailureAlarm',
+        #     metric=cloudwatch.Metric(
+        #         metric_name='5XXError',
+        #         namespace='AWS/ApiGateway',
+        #         dimensions_map={
+        #             'ApiName': 'Gateway',
+        #         },
+        #         statistic='Sum',
+        #         period=Duration.minutes(1)),
+        #     threshold=1,
+        #     evaluation_periods=1)
+        #
+        # codedeploy.LambdaDeploymentGroup(self, 'DeploymentGroup',
+        #     alias=alias,
+        #     deployment_config=codedeploy.LambdaDeploymentConfig.CANARY_10_PERCENT_10_MINUTES,
+        #     alarms=[failure_alarm])
 
         self.url_output = CfnOutput(self, 'Url',
             value=gw.url)

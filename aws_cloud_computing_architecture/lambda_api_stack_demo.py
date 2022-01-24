@@ -35,7 +35,7 @@ class LambdaApiStackDemo(Stack):
             metric=cloudwatch.Metric(
                 metric_name='5XXError',
                 namespace='AWS/ApiGateway',
-                dimensions={
+                dimensions_map={
                     'ApiName': 'Gateway',
                 },
                 statistic='Sum',

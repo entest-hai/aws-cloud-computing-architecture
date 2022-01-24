@@ -8,7 +8,7 @@ from aws_cdk import (
     Stack
 )
 from constructs import Construct
-from lambda_api_stage_demo import LambdaApiStageDemo
+from .lambda_api_stage_demo import LambdaApiStageDemo
 
 class AwsCloudComputingArchitectureStack(Stack):
     def __init__(self, scope: Construct, id: str, **kwargs):

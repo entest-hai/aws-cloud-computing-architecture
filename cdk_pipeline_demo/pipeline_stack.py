@@ -26,7 +26,7 @@ class PipelineStack(Stack):
             synth=pipelines.ShellStep(
                 'Synth',
                 input=pipelines.CodePipelineSource.connection(
-                    "entest-hai/aws-cloud-computing-architecture",
+                    "entest-hai/aws-cloud-computing-architecture/cdk-pipeline-demo/",
                     "codepipeline-lambda",
                     connection_arn="arn:aws:codestar-connections:ap-southeast-1:610770234379:connection/ae577773-a348-472d-96cd-0f3ceb656c09"
                 ),

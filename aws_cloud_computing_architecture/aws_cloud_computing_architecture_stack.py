@@ -40,15 +40,6 @@ class AwsCloudComputingArchitectureStack(Stack):
             )
         )
 
-        # creat a custom step
-        custom_step = pipelines.Step([
-            aws_codepipeline_actions.ManualApprovalAction(
-                action_name="ManualApproval",
-                notification_topic=aws_sns.Topic(self, "CdkCodePipelineLambdaApiDemoNotification"),
-                notify_emails=["hai@bio-rithm.com", "hai@entest.io"]
-            )
-        ])
-
         # add prod-stage
         pipeline.add_stage(
             LambdaApiStageDemo(
@@ -57,6 +48,10 @@ class AwsCloudComputingArchitectureStack(Stack):
             ),
             pre=[
                 # pipelines.ManualApprovalStep("PromotedToProd")
-                custom_step
+                aws_codepipeline_actions.ManualApprovalAction(
+                    action_name="ManualApproval",
+                    notification_topic=aws_sns.Topic(self, "CdkCodePipelineLambdaApiDemoNotification"),
+                    notify_emails=["hai@bio-rithm.com", "hai@entest.io"]
+                )
             ]
         )

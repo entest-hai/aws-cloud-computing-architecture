@@ -4,6 +4,8 @@
 # 23 JAN 2022 Hai Tran
 
 from aws_cdk import (
+    aws_sns,
+    aws_codepipeline_actions,
     pipelines,
     Stack
 )
@@ -38,6 +40,15 @@ class AwsCloudComputingArchitectureStack(Stack):
             )
         )
 
+        # creat a custom step
+        custom_step = pipelines.Step([
+            aws_codepipeline_actions.ManualApprovalAction(
+                action_name="ManualApproval",
+                notification_topic=aws_sns.Topic(self, "CdkCodePipelineLambdaApiDemoNotification"),
+                notify_emails=["hai@bio-rithm.com", "hai@entest.io"]
+            )
+        ])
+
         # add prod-stage
         pipeline.add_stage(
             LambdaApiStageDemo(
@@ -45,6 +56,7 @@ class AwsCloudComputingArchitectureStack(Stack):
                 "prod"
             ),
             pre=[
-                pipelines.ManualApprovalStep("PromotedToProd")
+                # pipelines.ManualApprovalStep("PromotedToProd")
+                custom_step
             ]
         )

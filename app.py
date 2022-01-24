@@ -3,11 +3,11 @@ import os
 
 import aws_cdk as cdk
 
-from cdk_pipeline_demo.pipeline_stack import PipelineStack
+from aws_cloud_computing_architecture.aws_cloud_computing_architecture_stack import AwsCloudComputingArchitectureStack
 
 
 app = cdk.App()
-PipelineStack(app, "CdkPipelineDemoStack",
+AwsCloudComputingArchitectureStack(app, "AwsCloudComputingArchitectureStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.

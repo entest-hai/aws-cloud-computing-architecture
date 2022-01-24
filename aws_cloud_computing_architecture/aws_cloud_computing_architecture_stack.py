@@ -6,12 +6,11 @@
 from aws_cdk import (
     pipelines,
     aws_codepipeline,
-    aws_codepipeline_actions,
     Stack
 )
 from constructs import Construct
 
-class PipelineStack(Stack):
+class AwsCloudComputingArchitectureStack(Stack):
     def __init__(self, scope: Construct, id: str, **kwargs):
         super().__init__(scope, id, **kwargs)
 
@@ -19,7 +18,7 @@ class PipelineStack(Stack):
         pipeline = pipelines.CodePipeline(
             self,
             'Pipeline',
-            pipeline_name='CdkPipelineDemo',
+            pipeline_name='WebinarPipeline',
             synth=pipelines.ShellStep(
                 'Synth',
                 input=pipelines.CodePipelineSource.connection(
@@ -27,6 +26,6 @@ class PipelineStack(Stack):
                     "cdk-pipeline-demo",
                     connection_arn="arn:aws:codestar-connections:ap-southeast-1:610770234379:connection/ae577773-a348-472d-96cd-0f3ceb656c09"
                 ),
-                commands=['pip install -r requirements.txt', 'npm install -g aws-cdk']
+                commands=["pip install -r requirements.txt", "npm install -g aws-cdk", "cdk synth"]
             )
         )

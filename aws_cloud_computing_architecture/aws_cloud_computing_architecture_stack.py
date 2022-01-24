@@ -30,10 +30,14 @@ class AwsCloudComputingArchitectureStack(Stack):
             )
         )
 
-        # add application stage which is a Lambda API
+        # add pre-prod stage
         pipeline.add_stage(
             LambdaApiStageDemo(
                 self,
                 "pre-prod"
             )
         )
+
+        # add manual review stage with email notification
+
+        # add prod-stage

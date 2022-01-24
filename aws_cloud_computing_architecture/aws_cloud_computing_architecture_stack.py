@@ -5,10 +5,10 @@
 
 from aws_cdk import (
     pipelines,
-    aws_codepipeline,
     Stack
 )
 from constructs import Construct
+from lambda_api_stage_demo import LambdaApiStageDemo
 
 class AwsCloudComputingArchitectureStack(Stack):
     def __init__(self, scope: Construct, id: str, **kwargs):
@@ -27,5 +27,13 @@ class AwsCloudComputingArchitectureStack(Stack):
                     connection_arn="arn:aws:codestar-connections:ap-southeast-1:610770234379:connection/ae577773-a348-472d-96cd-0f3ceb656c09"
                 ),
                 commands=["pip install -r requirements.txt", "npm install -g aws-cdk", "cdk synth"]
+            )
+        )
+
+        # add application stage which is a Lambda API
+        pipeline.add_stage(
+            LambdaApiStageDemo(
+                self,
+                "pre-prod"
             )
         )

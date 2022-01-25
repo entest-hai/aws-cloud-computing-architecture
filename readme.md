@@ -132,5 +132,13 @@ Go to AWS API Gateway console, find the new created API endpoint and curl to che
 ```
  https://{id}.execute-api.ap-southeast-1.amazonaws.com/Prod/TimeResource
 ``` 
+### 5. There are two S3 bucket 
+first one is created by the AWS CodePipeline with this policy <br/>
+![bucket_policy](https://user-images.githubusercontent.com/20411077/150976031-38a617eb-a189-4d4e-b8e2-a3501f0e22b0.png)
+<br/>
+second we need to creaet a S3 bucket to store the outputtemplate.yaml
 
+### 6. Need to add deploy action
+before deploy action need to manually execute change set like this <br/>
+![deploy_chage_set_execute](https://user-images.githubusercontent.com/20411077/150976232-5cce834d-8870-442e-809d-a32487fc7007.png)
 

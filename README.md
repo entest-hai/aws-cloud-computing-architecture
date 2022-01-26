@@ -37,6 +37,8 @@ Let run the test script and analyse the log. Check python environment before run
 ./run 
 ```
 ##### 3.4 Results 
+![MicrosoftTeams-image](https://user-images.githubusercontent.com/20411077/151145822-5a040b7a-8089-4b73-8a91-9f4240e92559.png)
+<br/>
 It is important to note that sometimes it can be upto 10% of the requests are timeout. 
 - total 350 records within few minutes (less than 5)
 - average 26 seconds per data record 

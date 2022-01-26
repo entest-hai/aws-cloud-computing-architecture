@@ -47,7 +47,7 @@ It is important to note that sometimes it can be upto 10% of the requests are ti
 - Create Lambda, Role, Policy, and API from CDK python code 
 - Create CDK CodePipeline from CDK python code 
 - Add pre-product, product, and manual approval stages 
-![stage](https://user-images.githubusercontent.com/20411077/151143137-e7975322-359a-4ed8-8afa-802e9e9c83c4.png)
+![stage](https://user-images.githubusercontent.com/20411077/151143459-75845c16-945b-4bcc-96f1-f7db456746dc.png)
 
 ## 5. Troubleshooting
 ```

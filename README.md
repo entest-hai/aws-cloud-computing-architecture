@@ -38,6 +38,7 @@ Let run the test script and analyse the log. Check python environment before run
 ```
 ##### 3.4 Results 
 It is important to note that sometimes it can be upto 10% of the requests are timeout. 
+- total 350 records within few minutes (less than 5)
 - average 26 seconds per data record 
 - aws lambda concurrency execution 360 
 - success rate can be 10% fail the first time request 
@@ -49,7 +50,6 @@ It is important to note that sometimes it can be upto 10% of the requests are ti
 - Add pre-product, product, and manual approval stages <br/>
 ![stage](https://user-images.githubusercontent.com/20411077/151143670-b859887f-ba65-4781-b75b-88b335abe093.png)
 <br/>
-
 ## 5. Troubleshooting
 ```
 {

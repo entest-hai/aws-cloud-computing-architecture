@@ -6,8 +6,9 @@
  - API gateway 
  - S3 bucket to store ECG 
  - Role to enable Lambda to access the S3 bucket 
- - API endpoint open mode for demo 
- 
+ - API endpoint open mode for demo  <br/>
+ ![pipeline](https://user-images.githubusercontent.com/20411077/151143026-bf89073a-5e3a-409c-8bcf-33a8a48c190f.png)
+ <br/>
 ## 2. Show the FHR API 
 Go to this link to try the FHR API [biorithm-fhr-api](https://test.bio-rithm.io/). Optional, walkthrough how the web is built using [AWS Amplify](https://docs.amplify.aws/lib/q/platform/js/), ReactJS, [material UI](https://mui.com/), and the TypeScript code. 
 
@@ -46,6 +47,7 @@ It is important to note that sometimes it can be upto 10% of the requests are ti
 - Create Lambda, Role, Policy, and API from CDK python code 
 - Create CDK CodePipeline from CDK python code 
 - Add pre-product, product, and manual approval stages 
+![stage](https://user-images.githubusercontent.com/20411077/151143137-e7975322-359a-4ed8-8afa-802e9e9c83c4.png)
 
 ## 5. Troubleshooting
 ```
